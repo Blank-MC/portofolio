@@ -97,46 +97,6 @@ export const skills = [
 
 export const experience = [
   {
-    period: L("2022 - 2025", "2022 - 2025"),
-    title: "SMK Budi Luhur",
-    subtitle: L("Rekayasa Perangkat Lunak (RPL)", "Software Engineering (RPL)"),
-    description: L(
-      "Masa sekolah tempat saya mencari ilmu dasar pengembangan perangkat lunak, basis data, dan kerja tim. Dari sini proyek web dan game pertama saya lahir.",
-      "The years where I built my foundation in software development, databases, and teamwork, and where my first web and game projects were born."
-    ),
-    icon: "education" as const,
-  },
-  {
-    period: L("2024 & 2025 · 6 bulan", "2024 & 2025 · 6 months"),
-    title: "Full Stack Web Intern",
-    subtitle: L("PT. Tjatra Yasa Indonesia · PKL", "PT. Tjatra Yasa Indonesia · Internship"),
-    description: L(
-      "Praktik kerja lapangan total enam bulan di PT. Tjatra Yasa Indonesia saat kelas 11 dan 12 SMK. Saya mengerjakan Portal Berita dan revamp website company profile, berkolaborasi dengan UI/UX designer, serta mengelola database dan logika backend.",
-      "A six-month internship at PT. Tjatra Yasa Indonesia during grades 11 and 12. I worked on a news portal and a company profile revamp, collaborated with UI/UX designers, and handled the database and backend logic."
-    ),
-    icon: "code" as const,
-  },
-  {
-    period: L("2024", "2024"),
-    title: "EasyCome · Proyek Freelance",
-    subtitle: L("Klien mahasiswa kampus Malaysia", "Client: student from a university in Malaysia"),
-    description: L(
-      "Sistem reservasi venue yang saya kerjakan pada 2024 dari tawaran orang yang saya kenal saat masih PKL, bukan atas nama PT tempat magang. Dibangun dengan Laravel dan MySQL dalam waktu sekitar satu bulan, dengan kolaborasi kode lewat GitLab.",
-      "A venue booking system I worked on in 2024 through an acquaintance while interning, not under the company I interned at. Built with Laravel and MySQL in about a month, with code collaboration via GitLab."
-    ),
-    icon: "briefcase" as const,
-  },
-  {
-    period: L("Juni 2025 - Sekarang", "June 2025 - Present"),
-    title: "Freelance Full Stack Developer",
-    subtitle: L("Proyek web klien", "Client web projects"),
-    description: L(
-      "Sejak pertengahan 2025 saya mengerjakan proyek web secara freelance, dari maintenance dan pengembangan fitur, debugging, sampai membangun sistem dari nol untuk klien.",
-      "Since mid-2025 I've taken on freelance web projects, from maintenance and new features to debugging and building systems from scratch for clients."
-    ),
-    icon: "briefcase" as const,
-  },
-  {
     period: L("Sep 2025 - Sekarang", "Sep 2025 - Present"),
     title: "Binus University",
     subtitle: L(
@@ -149,6 +109,47 @@ export const experience = [
     ),
     icon: "education" as const,
   },
+  {
+    period: L("Juni 2025 - Sekarang", "June 2025 - Present"),
+    title: "Freelance Full Stack Developer",
+    subtitle: L("Proyek web klien", "Client web projects"),
+    description: L(
+      "Sejak pertengahan 2025 saya mengerjakan proyek web secara freelance, dari maintenance dan pengembangan fitur, debugging, sampai membangun sistem dari nol untuk klien.",
+      "Since mid-2025 I've taken on freelance web projects, from maintenance and new features to debugging and building systems from scratch for clients."
+    ),
+    icon: "briefcase" as const,
+  },
+  {
+    period: L("2024", "2024"),
+    title: "EasyCome · Proyek Freelance",
+    subtitle: L("Klien mahasiswa kampus Malaysia", "Client: student from a university in Malaysia"),
+    description: L(
+      "Sistem reservasi venue yang saya kerjakan pada 2024 dari tawaran orang yang saya kenal saat masih PKL, bukan atas nama PT tempat magang. Dibangun dengan Laravel dan MySQL dalam waktu sekitar satu bulan, dengan kolaborasi kode lewat GitLab.",
+      "A venue booking system I worked on in 2024 through an acquaintance while interning, not under the company I interned at. Built with Laravel and MySQL in about a month, with code collaboration via GitLab."
+    ),
+    icon: "briefcase" as const,
+  },
+  {
+    period: L("2024 & 2025 · 6 bulan", "2024 & 2025 · 6 months"),
+    title: "Full Stack Web Intern",
+    subtitle: L("PT. Tjatra Yasa Indonesia · PKL", "PT. Tjatra Yasa Indonesia · Internship"),
+    description: L(
+      "Praktik kerja lapangan total enam bulan di PT. Tjatra Yasa Indonesia saat kelas 11 dan 12 SMK. Saya mengerjakan Portal Berita dan revamp website company profile, berkolaborasi dengan UI/UX designer, serta mengelola database dan logika backend.",
+      "A six-month internship at PT. Tjatra Yasa Indonesia during grades 11 and 12. I worked on a news portal and a company profile revamp, collaborated with UI/UX designers, and handled the database and backend logic."
+    ),
+    icon: "code" as const,
+  },
+  {
+    period: L("2022 - 2025", "2022 - 2025"),
+    title: "SMK Budi Luhur",
+    subtitle: L("Rekayasa Perangkat Lunak (RPL)", "Software Engineering (RPL)"),
+    description: L(
+      "Masa sekolah tempat saya mencari ilmu dasar pengembangan perangkat lunak, basis data, dan kerja tim. Dari sini proyek web dan game pertama saya lahir.",
+      "The years where I built my foundation in software development, databases, and teamwork, and where my first web and game projects were born."
+    ),
+    icon: "education" as const,
+  }
+
 ];
 
 export const projects: Project[] = [
