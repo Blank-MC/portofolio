@@ -19,8 +19,8 @@ import { useLocale } from "../../lib/i18n";
 import { L, type Localized } from "../../lib/locale";
 
 const copy = {
-  eyebrow: L("Selected Work", "Selected Work"),
-  title: L("Things I've built.", "Things I've built."),
+  eyebrow: L("Proyek Pilihan", "Selected Work"),
+  title: L("Karya saya.", "Things I've built."),
   description: L(
     "Kumpulan proyek yang pernah saya kerjakan, dari aplikasi web hingga game.",
     "A collection of projects I've worked on, from web apps to games."
@@ -113,7 +113,7 @@ function ProjectCard({
           </div>
 
           <div className="relative z-10 p-6 sm:p-7">
-            <h3 className="font-display text-3xl text-ivory transition group-hover:text-gold-soft">
+            <h3 className="break-words font-display text-2xl leading-tight text-ivory transition group-hover:text-gold-soft sm:text-3xl">
               {project.title}
             </h3>
             <p className="mt-2 line-clamp-2 text-sm leading-6 text-muted">

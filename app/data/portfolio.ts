@@ -36,11 +36,10 @@ export interface Certificate {
   credential?: string;
 }
 
-// TODO: aktifkan lagi setelah email, WhatsApp, dan CV versi profesional siap.
 export const contactVisibility = {
-  showEmail: false,
-  showWhatsapp: false,
-  showCv: false,
+  showEmail: true,
+  showWhatsapp: true,
+  showCv: true,
   placeholder: "-",
 } as const;
 
@@ -48,7 +47,7 @@ export const profile = {
   name: "Rezya Indy Saputra",
   shortName: "Rezya",
   handle: "rezy___a",
-  role: "Web Developer",
+  role: "Full Stack Developer",
   location: "Indonesia",
   email: "rezyaindisaputra@gmail.com",
   phone: "+62 821 3542 3599",
@@ -57,25 +56,25 @@ export const profile = {
   github: "https://github.com/Blank-MC",
   cv: "/Rezya-Indy-Saputra-CV.pdf",
   bio: L(
-    "Saya membangun pengalaman web yang cepat, interaktif, dan punya karakter. Dari antarmuka yang rapi sampai detail animasi yang bikin produk terasa hidup.",
-    "I build fast, interactive web experiences with character. From clean interfaces to animation details that make a product feel alive."
+    "Saya membangun aplikasi web dari ujung ke ujung, antarmuka yang cepat, logika server yang rapi, sampai database. Detail animasi pun saya perhatikan supaya produk terasa hidup.",
+    "I build web applications end to end, fast interfaces, tidy server logic, and solid databases. I care about the animation details too, so a product feels alive."
   ),
   about: [
     L(
-      "Saya adalah web developer muda yang suka membangun sesuatu dari nol. Fokus saya ada pada kualitas antarmuka, struktur kode yang rapi, dan pengalaman pengguna yang terasa natural.",
-      "I'm a young web developer who loves building things from scratch. I focus on interface quality, clean code structure, and user experiences that feel natural."
+      "Saya adalah full stack developer muda yang suka membangun sesuatu dari nol. Fokus saya ada pada kualitas antarmuka, struktur kode yang rapi, dan alur data yang nyambung dari frontend sampai backend.",
+      "I'm a young full stack developer who loves building things from scratch. I focus on interface quality, clean code structure, and data flows that connect frontend to backend."
     ),
     L(
-      "Perjalanan saya dimulai dari dunia game development, lalu berkembang ke web application, e-commerce, dan kini bereksperimen dengan animasi serta grafis 3D di browser. Saya juga sedang kuliah di Binus jurusan Cybersecurity, yang membuat saya makin peduli pada keamanan dan kualitas sistem yang saya bangun.",
-      "My journey started in game development, then grew into web applications, e-commerce, and now experimenting with motion and 3D graphics in the browser. I'm also currently studying Cybersecurity at Binus, which makes me care even more about the security and quality of the systems I build."
+      "Perjalanan saya dimulai dari dunia game development, lalu berkembang ke aplikasi web dengan panel admin dan database, sampai kini bereksperimen dengan animasi serta grafis 3D di browser. Saya juga sedang kuliah di Binus jurusan Cybersecurity, yang membuat saya makin peduli pada keamanan dan kualitas sistem yang saya bangun.",
+      "My journey started in game development, then grew into web applications with admin panels and databases, and now experimenting with motion and 3D graphics in the browser. I'm also currently studying Cybersecurity at Binus, which makes me care even more about the security and quality of the systems I build."
     ),
   ],
 };
 
 export const stats = [
-  { value: 7, suffix: "+", label: L("Project selesai", "Projects completed") },
-  { value: 3, suffix: "", label: L("Sertifikat diraih", "Certificates earned") },
-  { value: 3, suffix: "+", label: L("Tahun pengalaman", "Years of experience") },
+  { value: 8, suffix: "+", label: L("Project selesai", "Projects completed") },
+  { value: 4, suffix: "", label: L("Sertifikat diraih", "Certificates earned") },
+  { value: 2, suffix: "+", label: L("Tahun pengalaman kerja", "Years of professional experience") },
 ];
 
 export const skills = [
@@ -90,6 +89,7 @@ export const skills = [
   { name: "MySQL", level: 78, group: "Backend" },
   { name: "CodeIgniter", level: 72, group: "Backend" },
   { name: "Laravel", level: 70, group: "Backend" },
+  { name: "Git / GitHub", level: 85, group: "Backend" },
   { name: "Three.js", level: 68, group: "Creative" },
   { name: "Motion", level: 80, group: "Creative" },
   { name: "Figma / UI Design", level: 75, group: "Creative" },
@@ -97,57 +97,57 @@ export const skills = [
 
 export const experience = [
   {
-    period: L("Sep 2025 — Sekarang", "Sep 2025 — Present"),
+    period: L("2022 - 2025", "2022 - 2025"),
+    title: "SMK Budi Luhur",
+    subtitle: L("Rekayasa Perangkat Lunak (RPL)", "Software Engineering (RPL)"),
+    description: L(
+      "Masa sekolah tempat saya mencari ilmu dasar pengembangan perangkat lunak, basis data, dan kerja tim. Dari sini proyek web dan game pertama saya lahir.",
+      "The years where I built my foundation in software development, databases, and teamwork, and where my first web and game projects were born."
+    ),
+    icon: "education" as const,
+  },
+  {
+    period: L("2024 & 2025 · 6 bulan", "2024 & 2025 · 6 months"),
+    title: "Full Stack Web Intern",
+    subtitle: L("PT. Tjatra Yasa Indonesia · PKL", "PT. Tjatra Yasa Indonesia · Internship"),
+    description: L(
+      "Praktik kerja lapangan total enam bulan di PT. Tjatra Yasa Indonesia saat kelas 11 dan 12 SMK. Saya mengerjakan Portal Berita dan revamp website company profile, berkolaborasi dengan UI/UX designer, serta mengelola database dan logika backend.",
+      "A six-month internship at PT. Tjatra Yasa Indonesia during grades 11 and 12. I worked on a news portal and a company profile revamp, collaborated with UI/UX designers, and handled the database and backend logic."
+    ),
+    icon: "code" as const,
+  },
+  {
+    period: L("2024", "2024"),
+    title: "EasyCome · Proyek Freelance",
+    subtitle: L("Klien mahasiswa kampus Malaysia", "Client: student from a university in Malaysia"),
+    description: L(
+      "Sistem reservasi venue yang saya kerjakan pada 2024 dari tawaran orang yang saya kenal saat masih PKL, bukan atas nama PT tempat magang. Dibangun dengan Laravel dan MySQL dalam waktu sekitar satu bulan, dengan kolaborasi kode lewat GitLab.",
+      "A venue booking system I worked on in 2024 through an acquaintance while interning, not under the company I interned at. Built with Laravel and MySQL in about a month, with code collaboration via GitLab."
+    ),
+    icon: "briefcase" as const,
+  },
+  {
+    period: L("Juni 2025 - Sekarang", "June 2025 - Present"),
+    title: "Freelance Full Stack Developer",
+    subtitle: L("Istana Komputer · Proyek web klien", "Istana Komputer · Client web projects"),
+    description: L(
+      "Sejak Juni 2025 saya freelance lewat Istana Komputer, awalnya maintenance website, lalu pengembangan fitur dan debugging. Saya juga mengambil proyek web lain secara freelance sampai sekarang.",
+      "Since June 2025 I've freelanced through Istana Komputer, starting with website maintenance, then new features and debugging. I've also taken on other freelance web projects along the way."
+    ),
+    icon: "briefcase" as const,
+  },
+  {
+    period: L("Sep 2025 - Sekarang", "Sep 2025 - Present"),
     title: "Binus University",
     subtitle: L(
       "Cybersecurity · Sarjana Teknik Informatika · Semester 3",
       "Cybersecurity · Bachelor of Informatics · Semester 3"
     ),
     description: L(
-      "Mulai 23 September 2025 dan saat ini memasuki semester 3. Fokus belajar di bidang keamanan siber, jaringan, dan praktik keamanan modern — sambil terus membangun proyek web.",
-      "Started on 23 September 2025 and currently in semester 3. Focusing on cybersecurity, networks, and modern security practices — while continuing to build web projects."
+      "Mulai 23 September 2025 dan saat ini memasuki semester 3. Fokus belajar di bidang keamanan siber, jaringan, dan praktik keamanan modern, sambil terus membangun aplikasi web end-to-end.",
+      "Started on 23 September 2025 and currently in semester 3. Focusing on cybersecurity, networks, and modern security practices, while continuing to build end-to-end web applications."
     ),
     icon: "education" as const,
-  },
-  {
-    period: L("2022 — 2023", "2022 — 2023"),
-    title: "SMK Budi Luhur",
-    subtitle: L("Rekayasa Perangkat Lunak (RPL)", "Software Engineering (RPL)"),
-    description: L(
-      "Pendidikan menengah kejuruan dengan fokus pada pengembangan perangkat lunak, basis data, dan praktik kerja tim.",
-      "Vocational high school education focused on software development, databases, and teamwork practice."
-    ),
-    icon: "education" as const,
-  },
-  {
-    period: L("2023", "2023"),
-    title: "Web Application Developer",
-    subtitle: L("Project sekolah & magang", "School projects & internship"),
-    description: L(
-      "Membangun aplikasi web dengan panel admin, alur persetujuan, dan pengelolaan konten.",
-      "Built web applications with admin panels, approval flows, and content management."
-    ),
-    icon: "code" as const,
-  },
-  {
-    period: L("2022 — 2023", "2022 — 2023"),
-    title: "Web E-Commerce",
-    subtitle: L("Project mandiri", "Independent project"),
-    description: L(
-      "Mendesain dan mengimplementasikan tampilan toko online yang responsif dan mudah digunakan.",
-      "Designed and implemented a responsive, easy-to-use online store interface."
-    ),
-    icon: "briefcase" as const,
-  },
-  {
-    period: L("2022 — 2023", "2022 — 2023"),
-    title: "Game Development",
-    subtitle: L("Tim Frantic · CCIT Festival", "Frantic Team · CCIT Festival"),
-    description: L(
-      "Mengembangkan Lost & Found bersama tim dan meraih Juara 3 Lomba Project Competition.",
-      "Developed Lost & Found with a team and won 3rd place at the Project Competition."
-    ),
-    icon: "game" as const,
   },
 ];
 
@@ -156,20 +156,28 @@ export const projects: Project[] = [
     id: "easycome",
     title: "EasyCome",
     category: "Web App",
-    year: "2023",
-    role: L("Fullstack Developer", "Fullstack Developer"),
+    year: "2024",
+    role: L("Full Stack Developer", "Full Stack Developer"),
     summary: L(
-      "Platform pemesanan venue dengan alur booking, persetujuan admin, dan manajemen profil yang rapi.",
-      "Venue booking platform with a clear booking flow, admin approvals, and tidy profile management."
+      "Platform pemesanan venue untuk mahasiswa dari kampus di Malaysia, datang dari tawaran orang yang saya kenal saat masa PKL.",
+      "Venue booking platform for a student from a university in Malaysia, from an offer through an acquaintance during my internship period."
     ),
     description: [
       L(
-        "EasyCome adalah aplikasi web untuk memesan tempat atau venue. Saya membangun alur lengkap mulai dari pencarian venue, formulir pemesanan, hingga status booking yang bisa disetujui atau dibatalkan admin.",
-        "EasyCome is a web app for booking venues. I built the full flow from browsing venues and submitting bookings to statuses that admins can approve or cancel."
+        "EasyCome adalah aplikasi web untuk memesan tempat atau venue. Proyek ini saya dapat pada 2024 dari tawaran orang yang saya kenal, kliennya mahasiswa dari kampus di Malaysia, saat saya masih menjalani PKL. Jadi bukan pekerjaan atas nama PT tempat magang saya.",
+        "EasyCome is a web app for booking venues. I got this project in 2024 through someone I know, the client was a student from a university in Malaysia, while I was doing my internship. So it wasn't work under the company I interned at."
+      ),
+      L(
+        "Saya membangun alur lengkap mulai dari pencarian venue, formulir pemesanan, hingga status booking yang bisa disetujui atau dibatalkan admin.",
+        "I built the full flow from browsing venues and submitting bookings to statuses that admins can approve or cancel."
       ),
       L(
         "Fokus utamanya adalah membuat status pemesanan mudah dipahami pengguna, sekaligus memberi panel admin yang ringkas untuk mengelola seluruh transaksi.",
         "The main focus was making booking statuses easy to understand while giving admins a compact panel to manage every transaction."
+      ),
+      L(
+        "Proyek freelance ini saya selesaikan dalam waktu sekitar satu bulan dengan Laravel dan MySQL. Kolaborasi kode serta integrasi antar anggota tim memakai GitLab.",
+        "This freelance project was delivered in about a month with Laravel and MySQL. Code collaboration and integration between teammates used GitLab."
       ),
     ],
     tags: ["Booking System", "Admin Dashboard", "Approval Flow", "Responsive"],
@@ -189,11 +197,11 @@ export const projects: Project[] = [
     id: "the-lost-boy",
     title: "The Lost Boy",
     category: "Game",
-    year: "2022 — 2023",
+    year: "2022 - 2023",
     role: L("Game Developer", "Game Developer"),
     summary: L(
-      "Prototipe game pertama saya saat kelas 10 — petualangan seorang anak yang tersesat, lalu jadi cikal bakal Lost & Found.",
-      "My first game prototype in 10th grade — an adventure about a lost child that later became the seed for Lost & Found."
+      "Prototipe game pertama saya saat kelas 10, petualangan seorang anak yang tersesat, lalu jadi cikal bakal Frantic.",
+      "My first game prototype in 10th grade, an adventure about a lost child that later became the seed for Frantic."
     ),
     description: [
       L(
@@ -201,8 +209,8 @@ export const projects: Project[] = [
         "The Lost Boy was built as a school game project when I was in 10th grade at SMK Budi Luhur. The experiment focused on core mechanics, simple levels, and a main character trying to find his way home."
       ),
       L(
-        "Ide dan asetnya kemudian saya bawa ke proyek kelas 11, Lost & Found / Frantic, yang dikembangkan bersama Tim Frantic dan meraih Juara 3 CCIT Festival 2023.",
-        "I later carried the ideas and assets into my 11th-grade project, Lost & Found / Frantic, developed with Team Frantic and awarded 3rd place at CCIT Festival 2023."
+        "Ide dan asetnya kemudian saya bawa ke proyek kelas 11, Frantic, yang dikembangkan bersama Tim Frantic dan meraih Juara 3 CCIT Festival 2023.",
+        "I later carried the ideas and assets into my 11th-grade project, Frantic, developed with Team Frantic and awarded 3rd place at CCIT Festival 2023."
       ),
     ],
     tags: ["Construct 3", "Game Prototype", "Level Design", "Character"],
@@ -219,14 +227,42 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "lost-found",
-    title: "Lost & Found",
+    id: "frantic",
+    title: "Frantic",
     category: "Game",
     year: "2023",
-    role: L("Game & UI Developer", "Game & UI Developer"),
+    role: L("Game Developer", "Game Developer"),
     summary: L(
-      "Aplikasi pelaporan barang hilang dan ditemukan yang dikembangkan sebagai Tim Frantic dan meraih Juara 3 CCIT Festival 2023.",
-      "A lost-and-found reporting app developed as Team Frantic, winning 3rd place at CCIT Festival 2023."
+      "Game puzzle petualangan yang dikembangkan dengan Construct 3 bersama Tim Frantic dan meraih Juara 3 CCIT Festival 2023.",
+      "An adventure puzzle game built with Construct 3 alongside Team Frantic, winning 3rd place at CCIT Festival 2023."
+    ),
+    description: [
+      L(
+        "Frantic adalah game petualangan berbasis teka-teki yang dikembangkan dari ide dan aset The Lost Boy. Pemain menjelajahi lingkungan, mengumpulkan petunjuk, dan memecahkan rangkaian teka-teki untuk maju.",
+        "Frantic is an adventure puzzle game developed from the ideas and assets of The Lost Boy. Players explore the environment, collect clues, and solve a chain of puzzles to progress."
+      ),
+      L(
+        "Proyek ini dibuat bersama Tim Frantic dari SMK Budi Luhur untuk Lomba Project Competition CCIT Festival 2023 dan membawa pulang Juara 3.",
+        "This project was built with Team Frantic from SMK Budi Luhur for the CCIT Festival 2023 Project Competition and took home 3rd place."
+      ),
+    ],
+    tags: ["Game", "Puzzle", "Construct 3", "Team Project"],
+    cover: "/assets/projects/frantic-cover.jpg",
+    accent: "#d8b87c",
+    gallery: [
+      { src: "/assets/projects/frantic-cover.jpg", alt: "Frantic gameplay", caption: L("Tampilan utama game Frantic", "Main view of Frantic") },
+      { src: "/assets/projects/frantic-puzzle.jpg", alt: "Frantic puzzle", caption: L("Salah satu teka-teki dan catatan petunjuk dalam game", "One of the puzzles and clue notes in the game") },
+    ],
+  },
+  {
+    id: "lost-found",
+    title: "Lost & Found",
+    category: "Web App",
+    year: "2023",
+    role: L("Full Stack Developer", "Full Stack Developer"),
+    summary: L(
+      "Aplikasi pelaporan barang hilang dan ditemukan untuk lingkungan sekolah, lengkap dengan panel admin, chat, dan riwayat.",
+      "A lost-and-found reporting app for a school environment, complete with an admin panel, chat, and history."
     ),
     description: [
       L(
@@ -234,20 +270,20 @@ export const projects: Project[] = [
         "Lost & Found helps users report lost or found items. The mobile-first interface makes reporting quick, with history and a chat room built in."
       ),
       L(
-        "Proyek ini juga dikenal dengan nama Frantic saat mengikuti Lomba Project Competition CCIT Festival 2023 bersama Tim Frantic dari SMK Budi Luhur. Kami merancang mekanik, level, dan visualnya, lalu membawa pulang Juara 3.",
-        "The project was also known as Frantic during the CCIT Festival 2023 Project Competition with Team Frantic from SMK Budi Luhur. We designed the mechanics, levels, and visuals, and took home 3rd place."
+        "Saya membangun alur pelaporan, panel admin untuk data kehilangan dan penemuan, serta halaman FAQ. Antarmukanya dibuat mobile-first supaya laporan bisa dikirim dengan cepat.",
+        "I built the reporting flow, an admin panel for lost and found data, and an FAQ page. The interface is mobile-first so reports can be submitted quickly."
       ),
       L(
-        "Lost & Found adalah kelanjutan dari The Lost Boy, prototipe game kelas 10 yang saya bangun sebelumnya. Ide petualangan dan beberapa mekaniknya saya kembangkan ulang sampai menjadi versi kompetisi ini.",
-        "Lost & Found continued The Lost Boy, the 10th-grade game prototype I built earlier. I reworked the adventure idea and several mechanics into this competition version."
+        "Aplikasi web ini berdiri sendiri dan berbeda dari Frantic, game kompetisi yang juga dikembangkan Tim Frantic.",
+        "This web app stands on its own and is separate from Frantic, the competition game also developed by Team Frantic."
       ),
     ],
-    tags: ["Construct 3", "Mobile UI", "Realtime Chat", "CCIT Festival"],
+    tags: ["Web App", "Mobile UI", "Admin Panel", "Chat"],
     cover: "/assets/projects/lost-found-cover.jpg",
     accent: "#e0a96d",
     featured: true,
     gallery: [
-      { src: "/assets/projects/lost-found-cover.jpg", alt: "Lost & Found app screens", caption: L("Tampilan aplikasi Lost & Found / Frantic", "App screens of Lost & Found / Frantic") },
+      { src: "/assets/projects/lost-found-cover.jpg", alt: "Lost & Found app screens", caption: L("Tampilan aplikasi Lost & Found", "App screens of Lost & Found") },
       { src: "/assets/projects/lost-found-home.jpg", alt: "Lost & Found home", caption: L("Beranda daftar laporan barang", "Home screen with the list of reports") },
       { src: "/assets/projects/lost-found-chat.jpg", alt: "Lost & Found chat", caption: L("Komunikasi langsung antar pengguna", "Direct communication between users") },
       { src: "/assets/projects/lost-found-history.jpg", alt: "Lost & Found history", caption: L("Riwayat seluruh aktivitas pengguna", "Full activity history for users") },
@@ -258,7 +294,7 @@ export const projects: Project[] = [
     title: "Tradisi Portal Berita",
     category: "Web App",
     year: "2023",
-    role: L("Web Developer", "Web Developer"),
+    role: L("Full Stack Developer", "Full Stack Developer"),
     summary: L(
       "CMS portal berita dengan manajemen artikel, kategori, organisasi, dan alur kurasi konten.",
       "News portal CMS with article, category, organization, and content curation management."
@@ -288,7 +324,7 @@ export const projects: Project[] = [
     title: "Perpustakaan Digital",
     category: "Web App",
     year: "2024",
-    role: L("Web Developer", "Web Developer"),
+    role: L("Full Stack Developer", "Full Stack Developer"),
     summary: L(
       "Sistem perpustakaan digital dengan sisi admin dan pengguna, termasuk peminjaman dan favorit.",
       "Digital library system with admin and user sides, including loans and favorites."
@@ -319,7 +355,7 @@ export const projects: Project[] = [
     title: "Portal Artikel Prakerin",
     category: "Web App",
     year: "2023",
-    role: L("Web Developer", "Web Developer"),
+    role: L("Full Stack Developer", "Full Stack Developer"),
     summary: L(
       "Portal artikel responsif dengan halaman depan, daftar artikel, dan tampilan pembacaan yang nyaman.",
       "Responsive article portal with a landing page, article list, and a comfortable reading view."
@@ -348,7 +384,7 @@ export const projects: Project[] = [
     id: "ecommerce",
     title: "Web E-Commerce",
     category: "E-Commerce",
-    year: "2022 — 2023",
+    year: "2022 - 2023",
     role: L("Frontend Developer", "Frontend Developer"),
     summary: L(
       "Tampilan toko online dengan hierarki produk yang jelas dan pengalaman belanja yang intuitif.",
@@ -376,34 +412,48 @@ export const projects: Project[] = [
 export const certificates: Certificate[] = [
   {
     id: "ccit",
-    title: L("Juara 3 — Lomba Project Competition", "3rd Place — Project Competition"),
+    title: L("Juara 3: Lomba Project Competition", "3rd Place: Project Competition"),
     issuer: L("CCIT Festival 2023 · Universitas Indonesia", "CCIT Festival 2023 · Universitas Indonesia"),
     year: "2023",
-    type: "pdf",
-    file: "/assets/certificates/sertifikat-ccit.pdf",
+    type: "image",
+    file: "/assets/certificates/sertifikat-ccit.webp",
     credential: "SERT-769/UN2.F4.D2.1.2/PDP.00.07.01/2023",
     description: L(
-      "Diraih bersama Tim Frantic dari SMK Budi Luhur lewat proyek Lost & Found dalam Lomba Project Competition yang diselenggarakan CCIT Festival 2023.",
-      "Earned with Team Frantic from SMK Budi Luhur for the Lost & Found project at the Project Competition held by CCIT Festival 2023."
+      "Diraih bersama Tim Frantic dari SMK Budi Luhur lewat game Frantic dalam Lomba Project Competition yang diselenggarakan CCIT Festival 2023.",
+      "Earned with Team Frantic from SMK Budi Luhur for the Frantic game at the Project Competition held by CCIT Festival 2023."
+    ),
+  },
+  {
+    id: "mage",
+    title: L("Juara 1: Game Development Competition MAGE X", "1st Place: Game Development Competition MAGE X"),
+    issuer: L("HIMATEKKOM · MAGE X 2024", "HIMATEKKOM · MAGE X 2024"),
+    year: "2024",
+    type: "image",
+    file: "/assets/certificates/sertifikat-mage.webp",
+    credential: "507/MAGEX/HIMATEKKOM/XII/2024",
+    description: L(
+      "Juara 1 bersama Tim Kleponism dalam Game Development Competition MAGE X kategori siswa tingkat nasional pada 23 November 2024.",
+      "1st place with Team Kleponism in the MAGE X Game Development Competition, national student category, on 23 November 2024."
     ),
   },
   {
     id: "algoritma",
-    title: L("Juara 3 — Lomba Algoritma", "3rd Place — Algorithm Competition"),
-    issuer: L("SMK Budi Luhur", "SMK Budi Luhur"),
+    title: L("Juara 3: Lomba Algoritma", "3rd Place: Algorithm Competition"),
+    issuer: L("HIMTI · Universitas Budi Luhur", "HIMTI · Budi Luhur University"),
     year: "2023",
     type: "image",
     file: "/assets/certificates/sertifikat-algoritma.png",
+    credential: "F/UBL/FT1/000/076/11/23",
     description: L(
-      "Sertifikat pencapaian Juara 3 dalam kompetisi algoritma tingkat sekolah.",
-      "Certificate for 3rd place in a school-level algorithm competition."
+      "Sertifikat pencapaian Juara 3 dalam ALGHORITHM COMPETITION PEMATIK ke-11 yang diselenggarakan HIMTI Universitas Budi Luhur.",
+      "Certificate for 3rd place in the 11th PEMATIK Algorithm Competition organized by HIMTI at Budi Luhur University."
     ),
   },
   {
     id: "prakerin",
     title: L("Sertifikat Prakerin", "Internship Certificate"),
-    issuer: L("Amikom", "Amikom"),
-    year: "2023",
+    issuer: L("Amikom · PT. GIT Solution Yogyakarta", "Amikom · PT. GIT Solution Yogyakarta"),
+    year: "2024",
     type: "image",
     file: "/assets/certificates/sertifikat-prakerin-1.jpeg",
     gallery: [
@@ -411,8 +461,8 @@ export const certificates: Certificate[] = [
       "/assets/certificates/sertifikat-prakerin-2.jpeg",
     ],
     description: L(
-      "Sertifikat penyelesaian program praktik kerja lapangan di Amikom.",
-      "Certificate of completion for the internship program at Amikom."
+      "Sertifikat penyelesaian praktik kerja industri di PT. GIT Solution Yogyakarta pada 20–21 Februari 2024, dengan fokus pada pengembangan web dan Laravel.",
+      "Certificate of completion for industrial internship at PT. GIT Solution Yogyakarta on 20–21 February 2024, focused on web development and Laravel."
     ),
   },
 ];

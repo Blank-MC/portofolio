@@ -10,11 +10,11 @@ import { useLocale } from "../../lib/i18n";
 import { L } from "../../lib/locale";
 
 const copy = {
-  eyebrow: L("Skills & Tools", "Skills & Tools"),
-  title: L("The toolkit.", "The toolkit."),
+  eyebrow: L("Kemampuan & Tools", "Skills & Tools"),
+  title: L("Alat kerja saya.", "The toolkit."),
   description: L(
-    "Teknologi yang saya pakai untuk mengubah ide menjadi pengalaman yang nyata.",
-    "The technologies I use to turn ideas into real experiences."
+    "Teknologi yang saya pakai untuk mengubah ide jadi aplikasi utuh, dari antarmuka, logika server, sampai database.",
+    "The technologies I use to turn ideas into complete apps, from interface and server logic to the database."
   ),
   items: L("items", "items"),
   notes: {

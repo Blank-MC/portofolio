@@ -11,8 +11,8 @@ import { useLocale } from "../../lib/i18n";
 import { L } from "../../lib/locale";
 
 const copy = {
-  eyebrow: L("Recognition", "Recognition"),
-  title: L("Proof of work.", "Proof of work."),
+  eyebrow: L("Penghargaan", "Recognition"),
+  title: L("Bukti karya.", "Proof of work."),
   description: L(
     "Beberapa pencapaian yang saya dapatkan selama belajar dan membangun.",
     "A few milestones I've earned while learning and building."

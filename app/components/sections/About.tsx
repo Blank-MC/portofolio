@@ -9,8 +9,8 @@ import { useLocale } from "../../lib/i18n";
 import { L } from "../../lib/locale";
 
 const copy = {
-  eyebrow: L("About Me", "About Me"),
-  title: L("Crafted with curiosity.", "Crafted with curiosity."),
+  eyebrow: L("Tentang Saya", "About Me"),
+  title: L("Dibangun dari rasa penasaran.", "Crafted with curiosity."),
   description: L(
     "Sekilas tentang orang di balik layar ini.",
     "A quick look at the person behind the screen."
@@ -24,7 +24,7 @@ const copy = {
   building: L("Building & learning", "Building & learning"),
   location: L("Lokasi", "Location"),
   focus: L("Fokus", "Focus"),
-  focusValue: L("Frontend & Creative Web", "Frontend & Creative Web"),
+  focusValue: L("Full Stack & Creative Web", "Full Stack & Creative Web"),
   education: L("Pendidikan", "Education"),
 };
 

@@ -17,26 +17,28 @@ const instrument = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Rezya Indy Saputra — Web Developer",
+  title: "Rezya Indy Saputra | Full Stack Developer",
   description:
-    "Portofolio Rezya Indy Saputra — web developer dan mahasiswa Cybersecurity di Binus University yang membangun pengalaman digital yang cepat, interaktif, dan berkarakter.",
+    "Portfolio of Rezya Indy Saputra, a full stack developer and Cybersecurity student at Binus University building web applications from interface to server.",
   keywords: [
     "Rezya Indy Saputra",
-    "Web Developer",
+    "Full Stack Developer",
+    "Backend Developer",
     "Cybersecurity",
     "Binus University",
-    "Portofolio",
+    "Portfolio",
     "Next.js",
     "React",
-    "Frontend Developer",
+    "Laravel",
+    "PHP",
   ],
   authors: [{ name: "Rezya Indy Saputra" }],
   openGraph: {
-    title: "Rezya Indy Saputra — Web Developer",
+    title: "Rezya Indy Saputra | Full Stack Developer",
     description:
-      "Portofolio proyek, sertifikat, dan pengalaman Rezya Indy Saputra — web developer & mahasiswa cybersecurity.",
+      "Projects, certificates, and experience of Rezya Indy Saputra, full stack developer and cybersecurity student.",
     type: "website",
-    locale: "id_ID",
+    locale: "en_US",
   },
 };
 
@@ -46,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" suppressHydrationWarning className={`${jakarta.variable} ${instrument.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${jakarta.variable} ${instrument.variable}`}>
       <body className="antialiased">{children}</body>
     </html>
   );

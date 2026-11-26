@@ -8,11 +8,11 @@ import { useLocale } from "../../lib/i18n";
 import { L } from "../../lib/locale";
 
 const copy = {
-  eyebrow: L("Journey", "Journey"),
-  title: L("The road so far.", "The road so far."),
+  eyebrow: L("Perjalanan", "Journey"),
+  title: L("Perjalanan sejauh ini.", "The road so far."),
   description: L(
-    "Langkah kecil yang perlahan membentuk cara saya bekerja hari ini.",
-    "Small steps that gradually shaped the way I work today."
+    "Dari SMK, magang, freelance, sampai kuliah, langkah yang perlahan membentuk cara saya bekerja hari ini.",
+    "From vocational school and internship to freelancing and university, small steps that gradually shaped the way I work today."
   ),
 };
 

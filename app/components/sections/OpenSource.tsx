@@ -31,7 +31,7 @@ const CACHE_TTL = 1000 * 60 * 30;
 
 const copy = {
   eyebrow: L("Open Source", "Open Source"),
-  title: L("Code in the open.", "Code in the open."),
+  title: L("Kode terbuka.", "Code in the open."),
   description: L(
     "Repo publik dari akun GitHub saya, diambil langsung lewat GitHub API.",
     "Public repos from my GitHub account, fetched straight from the GitHub API."

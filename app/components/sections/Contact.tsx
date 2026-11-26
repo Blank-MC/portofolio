@@ -18,8 +18,8 @@ import { useLocale } from "../../lib/i18n";
 import { L } from "../../lib/locale";
 
 const copy = {
-  eyebrow: L("Get In Touch", "Get In Touch"),
-  title: L("Let's make something great.", "Let's make something great."),
+  eyebrow: L("Hubungi Saya", "Get In Touch"),
+  title: L("Yuk bikin sesuatu yang hebat.", "Let's make something great."),
   description: L(
     "Punya ide, proyek, atau sekadar mau ngobrol soal web? Saya dengan senang hati mendengarnya.",
     "Have an idea, a project, or just want to talk about the web? I'd love to hear it."

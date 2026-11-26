@@ -22,17 +22,11 @@ interface LocaleContextValue {
 const LocaleContext = createContext<LocaleContextValue | null>(null);
 
 export function LocaleProvider({ children }: { children: React.ReactNode }) {
-  const [locale, setLocale] = useState<Locale>("id");
+  const [locale, setLocale] = useState<Locale>("en");
 
   useEffect(() => {
     const stored = window.localStorage.getItem(STORAGE_KEY);
-    const initial: Locale =
-      stored === "id" || stored === "en"
-        ? stored
-        : window.navigator.language.toLowerCase().startsWith("id")
-          ? "id"
-          : "en";
-    setLocale(initial);
+    if (stored === "id" || stored === "en") setLocale(stored);
   }, []);
 
   useEffect(() => {

@@ -1,6 +1,6 @@
-# Rezya Indy Saputra — Portfolio
+# Rezya Indy Saputra | Portfolio
 
-Portfolio web interaktif untuk Rezya Indy Saputra — web developer yang suka membangun pengalaman yang cepat, rapi, dan punya karakter.
+Portfolio web interaktif untuk Rezya Indy Saputra, web developer yang suka membangun pengalaman yang cepat, rapi, dan punya karakter.
 
 Interactive portfolio built with **Next.js**, **TypeScript**, **Tailwind CSS**, and a draggable **React Bits 3D lanyard**. Tersedia dalam Bahasa Indonesia dan English.
 
@@ -16,12 +16,12 @@ Interactive portfolio built with **Next.js**, **TypeScript**, **Tailwind CSS**, 
 
 ## ✨ Highlights
 
-- **Bilingual content** — Bahasa Indonesia / English toggle, tersimpan di `localStorage`.
-- **3D lanyard** — kartu bisa digeser, dilempar, dan diklik untuk flip. Menggunakan komponen React Bits dengan Three.js.
-- **Two experience modes** — `full` untuk efek glass, blur, grid, cursor, dan particle; `performance` otomatis dipakai saat `prefers-reduced-motion` atau perangkat rendah daya.
-- **Projects & certificates** — gallery gambar, detail project, dan tautan sertifikat lewat modal.
-- **Live GitHub repos** — daftar repository diambil dari GitHub API dan di-cache 30 menit di browser.
-- **Responsive dark-gold theme** — palet obsidian, gold, gold-soft, teal, dan ivory.
+- **Bilingual content**: Bahasa Indonesia / English toggle, tersimpan di `localStorage`.
+- **3D lanyard**: kartu bisa digeser, dilempar, dan diklik untuk flip. Menggunakan komponen React Bits dengan Three.js.
+- **Two experience modes**: `full` untuk efek glass, blur, grid, cursor, dan particle; `performance` otomatis dipakai saat `prefers-reduced-motion` atau perangkat rendah daya.
+- **Projects & certificates**: gallery gambar, detail project, dan tautan sertifikat lewat modal.
+- **Live GitHub repos**: daftar repository diambil dari GitHub API dan di-cache 30 menit di browser.
+- **Responsive dark-gold theme**: palet obsidian, gold, gold-soft, teal, dan ivory.
 
 ---
 
@@ -94,11 +94,11 @@ public/
 
 Semua konten utama ada di `app/data/portfolio.ts`:
 
-- `profile` — identitas, bio, dan tautan.
-- `projects` — kartu project + gallery.
-- `certificates` — daftar sertifikat.
-- `skills`, `stats`, `experience` — konten section terkait.
-- `contactVisibility` — flag untuk menampilkan/menyembunyikan email, WhatsApp, dan CV.
+- `profile`: identitas, bio, dan tautan.
+- `projects`: kartu project + gallery.
+- `certificates`: daftar sertifikat.
+- `skills`, `stats`, `experience`: konten section terkait.
+- `contactVisibility`: flag untuk menampilkan/menyembunyikan email, WhatsApp, dan CV.
 
 ```ts
 export const contactVisibility = {
@@ -113,9 +113,9 @@ Ganti `false` menjadi `true` setelah kontak profesional dan CV baru siap.
 
 Gambar lanyard sementara masih memakai placeholder. Tinggal overwrite:
 
-- `public/card-front.png` — portrait 800×1120
-- `public/card-back.png` — portrait 800×1120
-- `public/band.png` — tekstur tali, di-repeat
+- `public/card-front.png`: portrait 800×1120
+- `public/card-back.png`: portrait 800×1120
+- `public/band.png`: tekstur tali, di-repeat
 
 ---
 

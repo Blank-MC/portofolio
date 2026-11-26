@@ -19,9 +19,9 @@ const copy = {
   badge: L("Open to collaboration", "Open to collaboration"),
   intro: L("Saya adalah", "I'm a"),
   roles: [
-    L("Web Developer", "Web Developer"),
+    L("Full Stack Developer", "Full Stack Developer"),
     L("Frontend Developer", "Frontend Developer"),
-    L("Fullstack Developer", "Fullstack Developer"),
+    L("Backend Developer", "Backend Developer"),
     L("Creative Coder", "Creative Coder"),
   ],
   view: L("Lihat Proyek", "View Projects"),
@@ -49,7 +49,7 @@ function StaticIdCard() {
           </div>
           <p className="font-display text-3xl leading-none text-ivory">Rezya</p>
           <p className="mt-1 text-[11px] uppercase tracking-[0.3em] text-gold">
-            Web Developer
+            Full Stack Dev
           </p>
         </div>
         <div className="flex items-end justify-between">

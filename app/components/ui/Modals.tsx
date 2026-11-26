@@ -140,7 +140,7 @@ export function ProjectModal({
     <AnimatePresence>
       {project && (
         <motion.div
-          className="fixed inset-0 z-[100] flex items-start justify-center overflow-y-auto bg-[#030508]/92 px-4 py-6 backdrop-blur-md sm:py-12"
+          className="fixed inset-0 z-[100] flex items-start justify-center overflow-y-auto bg-[#030508]/92 px-3 py-5 backdrop-blur-md sm:px-6 sm:py-12"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -153,7 +153,7 @@ export function ProjectModal({
             role="dialog"
             aria-modal="true"
             aria-label={project.title}
-            className="glass-strong relative my-auto w-full max-w-5xl overflow-hidden rounded-3xl"
+            className="glass-strong relative my-auto min-w-0 w-full max-w-5xl overflow-hidden rounded-3xl"
             initial={isFull ? { opacity: 0, y: 36, scale: 0.97 } : false}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={isFull ? { opacity: 0, y: 24, scale: 0.98 } : { opacity: 0 }}
@@ -169,7 +169,7 @@ export function ProjectModal({
             </button>
 
             <div className="grid lg:grid-cols-[1.05fr_0.95fr]">
-              <div className="relative flex min-h-[280px] items-center justify-center overflow-hidden bg-[#080c13] p-4 sm:p-6 lg:min-h-[620px]">
+              <div className="relative flex min-h-[240px] items-center justify-center overflow-hidden bg-[#080c13] p-3 sm:min-h-[280px] sm:p-6 lg:min-h-[620px]">
                 <div
                   className="pointer-events-none absolute inset-0 opacity-60"
                   style={{
@@ -204,7 +204,7 @@ export function ProjectModal({
                       onClick={() =>
                         setActive((i) => (i - 1 + project.gallery.length) % project.gallery.length)
                       }
-                      className="absolute left-7 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-gold/20 bg-[#0a0e15]/80 text-gold transition hover:bg-gold hover:text-[#0a0e14]"
+                      className="absolute left-2 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-gold/20 bg-[#0a0e15]/80 text-gold transition hover:bg-gold hover:text-[#0a0e14] sm:left-7"
                     >
                       <FaArrowLeft />
                     </button>
@@ -212,7 +212,7 @@ export function ProjectModal({
                       type="button"
                       aria-label={t(copy.nextImage)}
                       onClick={() => setActive((i) => (i + 1) % project.gallery.length)}
-                      className="absolute right-7 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-gold/20 bg-[#0a0e15]/80 text-gold transition hover:bg-gold hover:text-[#0a0e14]"
+                      className="absolute right-2 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-gold/20 bg-[#0a0e15]/80 text-gold transition hover:bg-gold hover:text-[#0a0e14] sm:right-7"
                     >
                       <FaArrowRight />
                     </button>
@@ -220,17 +220,17 @@ export function ProjectModal({
                 )}
               </div>
 
-              <div className="flex flex-col p-6 sm:p-9">
-                <div className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.25em] text-gold">
-                  <span>{project.category}</span>
-                  <span className="h-px w-8 bg-gold/40" />
+              <div className="flex min-w-0 flex-col p-5 pr-12 sm:p-9 sm:pr-14">
+                <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-gold sm:text-[11px] sm:tracking-[0.25em]">
+                  <span className="break-words">{project.category}</span>
+                  <span className="hidden h-px w-8 bg-gold/40 sm:block" />
                   <span className="text-muted">{project.year}</span>
                 </div>
-                <h3 className="mt-4 font-display text-5xl leading-none text-ivory sm:text-6xl">
+                <h3 className="mt-3 break-words font-display text-[2rem] leading-[1.08] text-ivory sm:text-4xl lg:text-5xl">
                   {project.title}
                 </h3>
-                <p className="mt-3 text-sm text-gold/80">{t(project.role)}</p>
-                <p className="mt-6 text-base leading-relaxed text-muted">
+                <p className="mt-2 break-words text-sm text-gold/80">{t(project.role)}</p>
+                <p className="mt-5 break-words text-sm leading-relaxed text-muted sm:text-base">
                   {t(project.summary)}
                 </p>
 
@@ -245,22 +245,22 @@ export function ProjectModal({
                   ))}
                 </div>
 
-                <div className="mt-7 space-y-4 border-t border-gold/10 pt-6">
+                <div className="mt-6 space-y-3 border-t border-gold/10 pt-5 sm:mt-7 sm:space-y-4 sm:pt-6">
                   {project.description.map((paragraph) => (
-                    <p key={paragraph.id} className="text-sm leading-7 text-muted">
+                    <p key={paragraph.id} className="break-words text-[13px] leading-6 text-muted sm:text-sm sm:leading-7">
                       {t(paragraph)}
                     </p>
                   ))}
                 </div>
 
-                <p className="mt-6 text-xs text-muted/70">
+                <p className="mt-5 break-words text-xs text-muted/70 sm:mt-6">
                   {t(project.gallery[active].caption)}
                 </p>
-                <p className="mt-2 text-[10px] text-muted/50">
+                <p className="mt-2 break-words text-[10px] text-muted/50">
                   {t(copy.galleryHint)}
                 </p>
 
-                <div className="mt-auto flex items-center justify-between gap-3 pt-8">
+                <div className="mt-auto flex flex-col items-stretch gap-3 pt-6 sm:flex-row sm:items-center sm:justify-between sm:pt-8">
                   <div className="flex gap-2">
                     <button
                       type="button"
@@ -284,7 +284,7 @@ export function ProjectModal({
                       href={`mailto:${profile.email}?subject=${encodeURIComponent(
                         `Diskusi proyek: ${project.title}`
                       )}`}
-                      className="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-2.5 text-xs font-bold text-[#0a0e14] transition hover:bg-gold-soft"
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-5 py-2.5 text-center text-xs font-bold text-[#0a0e14] transition hover:bg-gold-soft sm:w-auto"
                     >
                       {t(copy.discuss)} <FaExternalLinkAlt />
                     </a>
@@ -294,7 +294,7 @@ export function ProjectModal({
             </div>
 
             {project.gallery.length > 1 && (
-              <div className="flex gap-3 overflow-x-auto border-t border-gold/10 p-4 sm:p-5">
+              <div className="flex max-w-full gap-3 overflow-x-auto border-t border-gold/10 p-4 sm:p-5">
                 {project.gallery.map((image, index) => (
                   <button
                     key={image.src}
