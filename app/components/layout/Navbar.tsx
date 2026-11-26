@@ -108,7 +108,7 @@ export default function Navbar() {
             RA
           </span>
           <span className="text-sm font-bold tracking-tight text-ivory sm:text-base">
-            rezya<span className="text-gold">.</span>dev
+            rezya<span className="text-teal">.</span>dev
           </span>
         </a>
 
@@ -124,7 +124,7 @@ export default function Navbar() {
               {active === link.id && (
                 <motion.span
                   layoutId={isFull ? "nav-active" : undefined}
-                  className="absolute inset-0 rounded-full border border-gold/20 bg-gold/5"
+                  className="absolute inset-0 rounded-full border border-teal/25 bg-teal/5"
                   transition={{ type: "spring", stiffness: 380, damping: 32 }}
                 />
               )}

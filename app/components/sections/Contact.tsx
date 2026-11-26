@@ -108,7 +108,7 @@ export default function Contact() {
           {channels.map(({ label, value, href, icon: Icon }) => {
             const content = (
               <>
-                <Icon className="text-xl text-gold transition group-hover:scale-110" />
+                <Icon className="text-xl text-teal transition group-hover:scale-110" />
                 <span className="text-xs font-semibold text-ivory">{label}</span>
                 <span className="max-w-full truncate text-[11px] text-muted">{value}</span>
               </>
@@ -141,7 +141,7 @@ export default function Contact() {
               download
               target="_blank"
               rel="noreferrer"
-              className="mt-10 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold/70 underline decoration-gold/30 underline-offset-8 transition hover:text-gold"
+              className="mt-10 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-teal/80 underline decoration-teal/30 underline-offset-8 transition hover:text-teal"
             >
               {t(copy.cv)}
             </a>

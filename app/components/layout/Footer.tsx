@@ -12,7 +12,7 @@ export default function Footer() {
           © {new Date().getFullYear()} Rezya Indy Saputra.{" "}
           {t(L("Dibuat dengan teliti.", "Crafted with care."))}
         </p>
-        <p className="font-mono text-[10px] tracking-[0.18em] text-muted/70">
+        <p className="font-mono text-[10px] tracking-[0.18em] text-teal/70">
           NEXT.JS · MOTION · THREE.JS
         </p>
       </div>

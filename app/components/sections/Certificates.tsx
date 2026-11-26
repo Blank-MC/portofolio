@@ -53,7 +53,7 @@ function CertificateCard({
         ) : (
           <div className="relative flex h-full w-full max-w-[240px] flex-col justify-between rounded-xl border border-gold/25 bg-gradient-to-br from-[#121a26] to-[#0a0e15] p-5 shadow-xl shadow-black/40 transition-transform duration-700 group-hover:-rotate-2 group-hover:scale-[1.03]">
             <div className="flex items-start justify-between">
-              <FaAward className="text-2xl text-gold" />
+              <FaAward className="text-2xl text-teal" />
               <FaFilePdf className="text-gold/50" />
             </div>
             <div>
@@ -71,13 +71,13 @@ function CertificateCard({
             </div>
           </div>
         )}
-        <span className="absolute right-4 top-4 flex h-9 w-9 translate-y-2 items-center justify-center rounded-full bg-gold text-[#0a0e14] opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+        <span className="absolute right-4 top-4 flex h-9 w-9 translate-y-2 items-center justify-center rounded-full bg-teal text-[#0a0e14] opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
           <FaArrowRight />
         </span>
       </div>
 
       <div className="p-6">
-        <div className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-gold">
+        <div className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-teal">
           <span>{certificate.year}</span>
           <span className="h-px w-6 bg-gold/40" />
           <span className="truncate text-muted">{t(certificate.issuer)}</span>

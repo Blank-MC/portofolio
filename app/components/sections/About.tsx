@@ -93,7 +93,7 @@ export default function About() {
             <Reveal delay={0.08}>
               <p className="font-display text-2xl leading-relaxed text-ivory/90 sm:text-3xl">
                 {t(copy.quoteLead)}{" "}
-                <span className="text-gold">{t(copy.quoteAccent)}</span>.
+                <span className="text-teal">{t(copy.quoteAccent)}</span>.
               </p>
             </Reveal>
             {profile.about.map((paragraph, index) => (
@@ -105,10 +105,10 @@ export default function About() {
             ))}
 
             <Stagger className="mt-10 grid gap-3 sm:grid-cols-3">
-              {facts.map(({ icon: Icon, label, value }) => (
+              {facts.map(({ icon: Icon, label, value }, index) => (
                 <StaggerItem key={label}>
                   <div className="glass group h-full rounded-2xl p-5 transition hover:border-gold/40">
-                    <Icon className="text-lg text-gold" />
+                    <Icon className={`text-lg ${index === 1 ? "text-teal" : "text-gold"}`} />
                     <p className="mt-4 text-[10px] uppercase tracking-[0.2em] text-muted">
                       {label}
                     </p>

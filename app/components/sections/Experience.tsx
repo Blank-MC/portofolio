@@ -37,7 +37,7 @@ export default function Experience() {
         />
 
         <Stagger className="relative mt-16 space-y-4" step={0.12}>
-          <div aria-hidden="true" className="absolute bottom-8 left-8 top-8 w-px bg-gradient-to-b from-gold/50 via-gold/15 to-transparent sm:bottom-11 sm:left-11 sm:top-11" />
+          <div aria-hidden="true" className="absolute bottom-8 left-8 top-8 w-px bg-gradient-to-b from-teal/70 via-gold/25 to-transparent sm:bottom-11 sm:left-11 sm:top-11" />
           {experience.map((item) => {
             const Icon = icons[item.icon];
             return (

@@ -76,7 +76,7 @@ export default function Hero() {
       <div aria-hidden="true" className="fx-only pointer-events-none absolute inset-0">
         <div className="grid-bg absolute inset-0" />
         <div className="absolute left-[12%] top-[18%] h-[420px] w-[420px] rounded-full bg-gold/10 blur-[130px]" />
-        <div className="absolute bottom-[8%] right-[10%] h-[360px] w-[360px] rounded-full bg-teal/10 blur-[130px]" />
+        <div className="absolute bottom-[8%] right-[10%] h-[360px] w-[360px] rounded-full bg-teal/20 blur-[130px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
@@ -102,7 +102,7 @@ export default function Hero() {
             <Reveal delay={0.14}>
               <h1 className="mt-6 font-display text-[4.5rem] leading-[0.88] text-ivory sm:text-7xl lg:text-[6.5rem]">
                 Rezya
-                <span className="text-gold">.</span>
+                <span className="text-teal">.</span>
               </h1>
             </Reveal>
 
