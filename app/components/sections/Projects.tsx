@@ -105,7 +105,7 @@ function ProjectCard({
               {project.category}
             </span>
             <span className="absolute right-4 top-4 rounded-full border border-white/10 bg-[#070a0f]/60 px-3 py-1 font-mono text-[10px] text-ivory/70 backdrop-blur-sm">
-              {project.year}
+              {t(project.year)}
             </span>
             <span className="absolute bottom-4 right-4 flex h-10 w-10 translate-y-2 items-center justify-center rounded-full bg-gold text-[#0a0e14] opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
               <FaArrowRight />

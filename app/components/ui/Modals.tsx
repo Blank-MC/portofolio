@@ -224,7 +224,7 @@ export function ProjectModal({
                 <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-gold sm:text-[11px] sm:tracking-[0.25em]">
                   <span className="break-words">{project.category}</span>
                   <span className="hidden h-px w-8 bg-gold/40 sm:block" />
-                  <span className="text-muted">{project.year}</span>
+                  <span className="text-muted">{t(project.year)}</span>
                 </div>
                 <h3 className="mt-3 break-words font-display text-[2rem] leading-[1.08] text-ivory sm:text-4xl lg:text-5xl">
                   {project.title}

@@ -12,7 +12,7 @@ export interface Project {
   id: string;
   title: string;
   category: ProjectCategory;
-  year: string;
+  year: Localized;
   role: Localized;
   summary: Localized;
   description: Localized[];
@@ -129,10 +129,10 @@ export const experience = [
   {
     period: L("Juni 2025 - Sekarang", "June 2025 - Present"),
     title: "Freelance Full Stack Developer",
-    subtitle: L("Istana Komputer · Proyek web klien", "Istana Komputer · Client web projects"),
+    subtitle: L("Proyek web klien", "Client web projects"),
     description: L(
-      "Sejak Juni 2025 saya freelance lewat Istana Komputer, awalnya maintenance website, lalu pengembangan fitur dan debugging. Saya juga mengambil proyek web lain secara freelance sampai sekarang.",
-      "Since June 2025 I've freelanced through Istana Komputer, starting with website maintenance, then new features and debugging. I've also taken on other freelance web projects along the way."
+      "Sejak pertengahan 2025 saya mengerjakan proyek web secara freelance, dari maintenance dan pengembangan fitur, debugging, sampai membangun sistem dari nol untuk klien.",
+      "Since mid-2025 I've taken on freelance web projects, from maintenance and new features to debugging and building systems from scratch for clients."
     ),
     icon: "briefcase" as const,
   },
@@ -156,7 +156,7 @@ export const projects: Project[] = [
     id: "easycome",
     title: "EasyCome",
     category: "Web App",
-    year: "2024",
+    year: L("2024", "2024"),
     role: L("Full Stack Developer", "Full Stack Developer"),
     summary: L(
       "Platform pemesanan venue untuk mahasiswa dari kampus di Malaysia, datang dari tawaran orang yang saya kenal saat masa PKL.",
@@ -197,7 +197,7 @@ export const projects: Project[] = [
     id: "the-lost-boy",
     title: "The Lost Boy",
     category: "Game",
-    year: "2022 - 2023",
+    year: L("2022 - 2023", "2022 - 2023"),
     role: L("Game Developer", "Game Developer"),
     summary: L(
       "Prototipe game pertama saya saat kelas 10, petualangan seorang anak yang tersesat, lalu jadi cikal bakal Frantic.",
@@ -230,7 +230,7 @@ export const projects: Project[] = [
     id: "frantic",
     title: "Frantic",
     category: "Game",
-    year: "2023",
+    year: L("2023", "2023"),
     role: L("Game Developer", "Game Developer"),
     summary: L(
       "Game puzzle petualangan yang dikembangkan dengan Construct 3 bersama Tim Frantic dan meraih Juara 3 CCIT Festival 2023.",
@@ -258,7 +258,7 @@ export const projects: Project[] = [
     id: "lost-found",
     title: "Lost & Found",
     category: "Web App",
-    year: "2023",
+    year: L("Kelas 11 · 2023", "Grade 11 · 2023"),
     role: L("Full Stack Developer", "Full Stack Developer"),
     summary: L(
       "Aplikasi pelaporan barang hilang dan ditemukan untuk lingkungan sekolah, lengkap dengan panel admin, chat, dan riwayat.",
@@ -274,8 +274,8 @@ export const projects: Project[] = [
         "I built the reporting flow, an admin panel for lost and found data, and an FAQ page. The interface is mobile-first so reports can be submitted quickly."
       ),
       L(
-        "Aplikasi web ini berdiri sendiri dan berbeda dari Frantic, game kompetisi yang juga dikembangkan Tim Frantic.",
-        "This web app stands on its own and is separate from Frantic, the competition game also developed by Team Frantic."
+        "Saya mengerjakan aplikasi ini sendiri dari nol, termasuk backend dan database, jadi alur pelaporan, chat, dan riwayatnya benar-benar berjalan, bukan cuma rancangan tampilan. Aplikasi ini berdiri sendiri dan berbeda dari Frantic, game kompetisi Tim Frantic.",
+        "I built this app myself from scratch, including the backend and database, so the reporting, chat, and history flows actually run, not just a UI design. It stands on its own and is separate from Frantic, the Team Frantic competition game."
       ),
     ],
     tags: ["Web App", "Mobile UI", "Admin Panel", "Chat"],
@@ -293,7 +293,7 @@ export const projects: Project[] = [
     id: "tradisi",
     title: "Tradisi Portal Berita",
     category: "Web App",
-    year: "2023",
+    year: L("2023", "2023"),
     role: L("Full Stack Developer", "Full Stack Developer"),
     summary: L(
       "CMS portal berita dengan manajemen artikel, kategori, organisasi, dan alur kurasi konten.",
@@ -323,7 +323,7 @@ export const projects: Project[] = [
     id: "perpus",
     title: "Perpustakaan Digital",
     category: "Web App",
-    year: "2024",
+    year: L("Kelas 12 · 2024", "Grade 12 · 2024"),
     role: L("Full Stack Developer", "Full Stack Developer"),
     summary: L(
       "Sistem perpustakaan digital dengan sisi admin dan pengguna, termasuk peminjaman dan favorit.",
@@ -338,8 +338,12 @@ export const projects: Project[] = [
         "Pengguna bisa melihat buku, menyimpan favorit, dan memantau peminjaman, sementara admin mendapatkan kontrol penuh atas data perpustakaan.",
         "Users can browse books, save favorites, and track loans, while admins get full control over library data."
       ),
+      L(
+        "Seluruh sistem ini saya bangun sendiri dari nol, termasuk backend dan database. Alur peminjaman, favorit, dan pengelolaan bukunya benar-benar jalan, bukan cuma halaman statis.",
+        "I built the whole system myself from scratch, including the backend and database. The loan, favorite, and book management flows actually work, not just static pages."
+      ),
     ],
-    tags: ["Library System", "Admin Panel", "Loans", "Dual Role"],
+    tags: ["Library System", "Admin Panel", "Loans", "Database", "Full Stack"],
     cover: "/assets/projects/perpus-dashboard.png",
     accent: "#9bb8e8",
     gallery: [
@@ -354,7 +358,7 @@ export const projects: Project[] = [
     id: "prakerin",
     title: "Portal Artikel Prakerin",
     category: "Web App",
-    year: "2023",
+    year: L("2023", "2023"),
     role: L("Full Stack Developer", "Full Stack Developer"),
     summary: L(
       "Portal artikel responsif dengan halaman depan, daftar artikel, dan tampilan pembacaan yang nyaman.",
@@ -384,23 +388,23 @@ export const projects: Project[] = [
     id: "ecommerce",
     title: "Web E-Commerce",
     category: "E-Commerce",
-    year: "2022 - 2023",
-    role: L("Frontend Developer", "Frontend Developer"),
+    year: L("Kelas 10 · 2022 - 2023", "Grade 10 · 2022 - 2023"),
+    role: L("Full Stack Developer", "Full Stack Developer"),
     summary: L(
-      "Tampilan toko online dengan hierarki produk yang jelas dan pengalaman belanja yang intuitif.",
-      "Online store interface with clear product hierarchy and an intuitive shopping experience."
+      "Toko online yang benar-benar berfungsi: katalog, keranjang, pemesanan, dan panel admin, dibangun end-to-end dari nol.",
+      "A fully working online store: catalog, cart, ordering, and admin panel, built end to end from scratch."
     ),
     description: [
       L(
-        "Proyek e-commerce ini berfokus pada penyajian katalog produk yang rapi dan mudah dijelajahi.",
-        "This e-commerce project focused on presenting a tidy, easy-to-browse product catalog."
+        "Proyek kelas 10 SMK ini bukan cuma tampilan. Saya membangun katalog produk, keranjang, alur pemesanan, dan panel admin yang data tersimpannya benar-benar masuk database.",
+        "This 10th-grade SMK project isn't just an interface. I built the product catalog, cart, ordering flow, and admin panel with data actually persisted in a database."
       ),
       L(
-        "Saya menangani struktur halaman, komposisi visual, serta memastikan tampilan tetap nyaman di berbagai ukuran layar.",
-        "I handled page structure, visual composition, and made sure the layout stays comfortable across screen sizes."
+        "Seluruhnya saya kerjakan sendiri dari nol, mulai frontend, backend, database, sampai alur datanya, supaya aplikasinya bisa dipakai utuh, bukan sekadar mockup UI.",
+        "I built the whole thing myself from scratch — frontend, backend, database, and the full data flow — so the app works end to end, not just as a UI mockup."
       ),
     ],
-    tags: ["E-Commerce", "Product UI", "Responsive", "Frontend"],
+    tags: ["E-Commerce", "Cart & Checkout", "Admin Panel", "Database", "Full Stack"],
     cover: "/assets/projects/ecommerce-home.jpg",
     accent: "#7cc6a8",
     gallery: [
