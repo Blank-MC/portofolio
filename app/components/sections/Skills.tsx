@@ -119,12 +119,23 @@ export default function Skills() {
         <Stagger className="mt-16 grid gap-5 lg:grid-cols-3" step={0.12}>
           {groups.map((group) => {
             const items = skills.filter((skill) => skill.group === group);
-            const accent = group === "Creative";
+            const groupAccent =
+              group === "Creative"
+                ? "text-teal"
+                : group === "Backend"
+                  ? "text-iris"
+                  : "text-gold-soft";
+            const barAccent =
+              group === "Creative"
+                ? "bg-gradient-to-r from-teal to-gold-soft"
+                : group === "Backend"
+                  ? "bg-gradient-to-r from-iris to-gold-soft"
+                  : "bg-gradient-to-r from-gold to-gold-soft";
             return (
               <StaggerItem key={group}>
                 <div className="glass flex h-full flex-col rounded-3xl p-6 sm:p-8">
                   <div className="flex items-center justify-between">
-                    <h3 className={`font-display text-3xl ${accent ? "text-teal" : "text-gold-soft"}`}>{group}</h3>
+                    <h3 className={`font-display text-3xl ${groupAccent}`}>{group}</h3>
                     <span className="font-mono text-[10px] text-muted">
                       {String(items.length).padStart(2, "0")} {t(copy.items)}
                     </span>
@@ -138,7 +149,7 @@ export default function Skills() {
                         </div>
                         <div className="mt-2 h-[3px] overflow-hidden rounded-full bg-white/8">
                           <motion.div
-                            className={`h-full rounded-full ${accent ? "bg-gradient-to-r from-teal to-gold-soft" : "bg-gradient-to-r from-gold to-gold-soft"}`}
+                            className={`h-full rounded-full ${barAccent}`}
                             initial={isFull ? { width: 0 } : false}
                             whileInView={{ width: `${skill.level}%` }}
                             viewport={{ once: true, amount: 0.6 }}

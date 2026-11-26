@@ -58,7 +58,12 @@ function ProjectCard({
     [rx, ry],
     (x, y) => `perspective(1000px) rotateX(${x}deg) rotateY(${y}deg)`
   );
-  const gameAccent = project.category === "Game";
+  const categoryAccent =
+    project.category === "Game"
+      ? "border-teal/35 text-teal"
+      : project.category === "Web App"
+        ? "border-iris/35 text-iris"
+        : "border-gold/30 text-gold";
 
   return (
     <motion.div layout className={project.featured ? "md:col-span-2" : ""}>
@@ -102,7 +107,7 @@ function ProjectCard({
               } transition-transform duration-700 group-hover:scale-[1.04]`}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#070a0f] via-[#070a0f]/10 to-transparent" />
-            <span className={`absolute left-4 top-4 rounded-full border bg-[#070a0f]/70 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] backdrop-blur-sm ${gameAccent ? "border-teal/35 text-teal" : "border-gold/30 text-gold"}`}>
+            <span className={`absolute left-4 top-4 rounded-full border bg-[#070a0f]/70 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] backdrop-blur-sm ${categoryAccent}`}>
               {project.category}
             </span>
             <span className="absolute right-4 top-4 rounded-full border border-white/10 bg-[#070a0f]/60 px-3 py-1 font-mono text-[10px] text-ivory/70 backdrop-blur-sm">
