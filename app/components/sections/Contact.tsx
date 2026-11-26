@@ -61,11 +61,21 @@ export default function Contact() {
 
   return (
     <section id="contact" className="relative overflow-hidden border-t border-border-subtle py-24 sm:py-36">
-      <div aria-hidden="true" className="fx-only pointer-events-none absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-gold/5" />
-      <div aria-hidden="true" className="fx-only pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-border-subtle" />
-      <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/[0.06] blur-[100px]" />
+      {/* Static lattice stays visible in Performance mode. */}
+      <div aria-hidden="true" className="arch-grid pointer-events-none absolute inset-0 select-none" />
+      <div aria-hidden="true" className="fx-only pointer-events-none absolute inset-0 select-none">
+        <div className="absolute left-1/2 top-[16%] h-[300px] w-[min(900px,100%)] -translate-x-1/2">
+          <div className="ambient-drift h-full w-full rounded-[50%] bg-gold/[0.08] blur-3xl" />
+        </div>
+        <div className="absolute left-1/2 top-[22%] h-[280px] w-[min(820px,100%)] -translate-x-1/2">
+          <div className="ambient-drift h-full w-full rounded-[50%] bg-teal-deep/[0.08] blur-3xl" />
+        </div>
+        <div className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-gold/5" />
+        <div className="absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-border-subtle" />
+      </div>
+      <div aria-hidden="true" className="pointer-events-none select-none absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/[0.06] blur-[100px]" />
 
-      <div className="relative mx-auto max-w-4xl px-5 text-center sm:px-8">
+      <div className="relative z-10 mx-auto max-w-4xl px-5 text-center sm:px-8">
         <SectionHeading
           index="07"
           eyebrow={t(copy.eyebrow)}

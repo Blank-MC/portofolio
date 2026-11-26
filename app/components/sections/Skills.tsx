@@ -100,7 +100,7 @@ export default function Skills() {
 
   return (
     <section id="skills" className="relative overflow-hidden border-t border-border-subtle py-24 sm:py-32">
-      <div aria-hidden="true" className="fx-only pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/[0.04] blur-[100px]" />
+      <div aria-hidden="true" className="fx-only pointer-events-none select-none absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/[0.04] blur-[100px]" />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         <SectionHeading

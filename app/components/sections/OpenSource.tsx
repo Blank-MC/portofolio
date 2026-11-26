@@ -204,6 +204,9 @@ export default function OpenSource() {
 
   return (
     <section id="opensource" className="relative border-t border-border-subtle py-24 sm:py-32">
+      <div aria-hidden="true" className="fx-only pointer-events-none absolute inset-0 select-none">
+        <div className="ambient-drift absolute right-[2%] top-[24%] h-[500px] w-[min(720px,80vw)] rounded-[50%] bg-gold/[0.05] blur-3xl" />
+      </div>
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         <SectionHeading
           index="05"

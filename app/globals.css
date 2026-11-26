@@ -188,19 +188,64 @@ section[id]::before {
   color: transparent;
 }
 
-.grid-bg {
+/* Fine architectural lattice: 32px cells, faded by a radial mask. */
+.arch-grid {
   background-image:
-    linear-gradient(to right, rgba(212, 184, 134, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(212, 184, 134, 0.05) 1px, transparent 1px);
-  background-size: 72px 72px;
-  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 0%, transparent 78%);
-  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 0%, transparent 78%);
+    linear-gradient(to right, var(--border-subtle) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border-subtle) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, #000 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, #000 40%, transparent 100%);
 }
 
+/* Global film grain. Positioning/opacity are set in layout.tsx so the
+   lightweight static texture survives Performance mode. */
 .noise-overlay {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
-  opacity: 0.035;
   mix-blend-mode: soft-light;
+}
+
+/* Very slow depth shift for ambient glows only. */
+@keyframes ambient-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -14px, 0) scale(1.04);
+  }
+}
+
+.ambient-drift {
+  animation: ambient-drift 26s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* ─── Architectural section dividers ────────────────────────────── */
+section[id]:not(#home),
+.arch-divider {
+  border-top-color: transparent;
+}
+
+section[id]:not(#home)::after,
+.arch-divider::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 1px;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--border-subtle) 30%,
+    var(--border-subtle) 44%,
+    rgba(212, 184, 134, 0.2) 50%,
+    var(--border-subtle) 56%,
+    var(--border-subtle) 70%,
+    transparent 100%
+  );
 }
 
 .section-label {
@@ -242,6 +287,12 @@ html[data-mode="performance"] .glass-strong {
 
 html[data-mode="performance"] section[id]::before {
   opacity: 0.45;
+}
+
+/* Static grid and grain stay; only the drifting ambient light stops. */
+html[data-mode="performance"] .ambient-drift {
+  animation: none !important;
+  will-change: auto;
 }
 
 @media (prefers-reduced-motion: reduce) {

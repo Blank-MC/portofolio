@@ -37,7 +37,7 @@ export default function Experience() {
         />
 
         <Stagger className="relative mt-16 space-y-4" step={0.12}>
-          <div aria-hidden="true" className="absolute bottom-8 left-8 top-8 w-px bg-border-subtle sm:bottom-11 sm:left-11 sm:top-11" />
+          <div aria-hidden="true" className="pointer-events-none select-none absolute bottom-8 left-8 top-8 w-px bg-border-subtle sm:bottom-11 sm:left-11 sm:top-11" />
           {experience.map((item, index) => {
             const Icon = icons[item.icon];
             const isLatest = index === 0;

@@ -86,7 +86,7 @@ function ProjectCard({
           className="glass relative h-full overflow-hidden rounded-3xl transition duration-500 hover:border-teal/50 hover:shadow-teal-glow"
         >
           {isFull && (
-            <span aria-hidden="true" className="spotlight pointer-events-none absolute inset-0 z-20" />
+            <span aria-hidden="true" className="spotlight pointer-events-none select-none absolute inset-0 z-20" />
           )}
 
           <div className="relative aspect-[16/10] overflow-hidden bg-surface">
@@ -166,6 +166,9 @@ export default function Projects() {
 
   return (
     <section id="projects" className="relative border-t border-border-subtle py-24 sm:py-32">
+      <div aria-hidden="true" className="fx-only pointer-events-none absolute inset-0 select-none">
+        <div className="ambient-drift absolute left-[2%] top-[26%] h-[520px] w-[min(760px,80vw)] rounded-[50%] bg-teal-deep/[0.05] blur-3xl" />
+      </div>
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading

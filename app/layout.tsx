@@ -49,7 +49,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className={`${jakarta.variable} ${instrument.variable}`}>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        {children}
+        <div
+          aria-hidden="true"
+          className="noise-overlay pointer-events-none fixed inset-0 z-50 select-none opacity-[0.03]"
+        />
+      </body>
     </html>
   );
 }

@@ -55,7 +55,7 @@ export default function About() {
         <div className="mt-14 grid items-center gap-14 lg:grid-cols-[0.85fr_1.15fr]">
           <Reveal>
             <div className="relative mx-auto flex h-[360px] w-full max-w-[380px] items-center justify-center sm:h-[440px]">
-              <div aria-hidden="true" className="absolute inset-0">
+              <div aria-hidden="true" className="pointer-events-none absolute inset-0 select-none">
                 <div className="absolute inset-4 rounded-full border border-border-subtle" />
                 <div className="absolute inset-14 rounded-full border border-dashed border-border-subtle" />
                 <div className="absolute left-0 top-1/2 h-px w-full bg-border-subtle" />
@@ -78,7 +78,7 @@ export default function About() {
                 </span>
               </div>
 
-              <div aria-hidden="true" className="pointer-events-none absolute -bottom-4 -right-4 h-32 w-32 rounded-full bg-teal-deep/15 blur-3xl sm:-right-8" />
+              <div aria-hidden="true" className="pointer-events-none select-none absolute -bottom-4 -right-4 h-32 w-32 rounded-full bg-teal-deep/15 blur-3xl sm:-right-8" />
               <div className="glass-strong absolute -bottom-2 -right-1 rounded-2xl px-5 py-4 sm:-right-6">
                 <p className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-gold">
                   <span className="fx-only relative flex h-1.5 w-1.5">

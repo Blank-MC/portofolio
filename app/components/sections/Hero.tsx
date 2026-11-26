@@ -74,10 +74,17 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative overflow-hidden pb-20 pt-32 sm:pt-40">
-      <div aria-hidden="true" className="fx-only pointer-events-none absolute inset-0">
-        <div className="grid-bg absolute inset-0" />
-        <div className="absolute left-[12%] top-[18%] h-[420px] w-[420px] rounded-full bg-gold/10 blur-[130px]" />
-        <div className="absolute bottom-[8%] right-[10%] h-[360px] w-[360px] rounded-full bg-teal-deep/10 blur-[130px]" />
+      {/* Static lattice stays visible in Performance mode. */}
+      <div aria-hidden="true" className="arch-grid pointer-events-none absolute inset-0 select-none" />
+      <div aria-hidden="true" className="fx-only pointer-events-none absolute inset-0 select-none">
+        <div className="absolute left-1/2 top-0 h-[380px] w-[min(1100px,100%)] -translate-x-1/2 -translate-y-1/4">
+          <div className="ambient-drift h-full w-full rounded-[50%] bg-teal-deep/[0.12] blur-3xl" />
+        </div>
+        <div className="absolute left-1/2 top-[6%] h-[320px] w-[min(880px,100%)] -translate-x-1/2">
+          <div className="ambient-drift h-full w-full rounded-[50%] bg-gold/[0.06] blur-3xl" />
+        </div>
+        <div className="absolute left-[12%] top-[18%] h-[420px] w-[420px] rounded-full bg-gold/[0.06] blur-[130px]" />
+        <div className="absolute bottom-[8%] right-[10%] h-[360px] w-[360px] rounded-full bg-teal-deep/[0.08] blur-[130px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
@@ -187,7 +194,7 @@ export default function Hero() {
           </motion.div>
 
           <div className="relative flex h-[460px] items-center justify-center sm:h-[540px] lg:h-[600px]">
-            <div aria-hidden="true" className="fx-only pointer-events-none absolute inset-0 flex items-center justify-center">
+            <div aria-hidden="true" className="fx-only pointer-events-none select-none absolute inset-0 flex items-center justify-center">
               <div className="h-[300px] w-[300px] rounded-full border border-border-subtle sm:h-[380px] sm:w-[380px]" />
               <div className="absolute h-[240px] w-[240px] rounded-full border border-dashed border-border-subtle sm:h-[310px] sm:w-[310px]" />
               <div className="absolute h-[300px] w-[300px] rounded-full bg-teal-deep/15 blur-3xl sm:h-[380px] sm:w-[380px]" />
