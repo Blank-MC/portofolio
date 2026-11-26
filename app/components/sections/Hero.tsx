@@ -107,11 +107,11 @@ export default function Hero() {
             </Reveal>
 
             <Reveal delay={0.2}>
-              <p className="mt-2 text-lg font-medium text-ivory/70 sm:text-xl">
+              <p className="mt-8 text-lg font-medium text-ivory/70 sm:mt-9 sm:text-xl">
                 {t(copy.intro)}{" "}
                 <RotatingText
                   texts={copy.roles.map(t)}
-                  mainClassName="inline-flex px-3 py-1.5 rounded-xl border border-gold/30 bg-gold/5 text-gold-soft text-lg sm:text-xl font-semibold"
+                  mainClassName="inline-flex overflow-hidden px-3 py-1.5 align-middle rounded-xl border border-gold/30 bg-gold/5 text-gold-soft text-lg sm:text-xl font-semibold"
                   rotationInterval={2400}
                   staggerDuration={0.022}
                   staggerFrom="first"
