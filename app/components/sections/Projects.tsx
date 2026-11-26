@@ -58,12 +58,7 @@ function ProjectCard({
     [rx, ry],
     (x, y) => `perspective(1000px) rotateX(${x}deg) rotateY(${y}deg)`
   );
-  const categoryAccent =
-    project.category === "Game"
-      ? "border-teal/35 text-teal"
-      : project.category === "Web App"
-        ? "border-iris/35 text-iris"
-        : "border-gold/30 text-gold";
+  const badgeClass = "border border-teal/20 bg-teal/10 text-teal";
 
   return (
     <motion.div layout className={project.featured ? "md:col-span-2" : ""}>
@@ -88,13 +83,13 @@ function ProjectCard({
       >
         <animated.div
           style={isFull ? { transform } : undefined}
-          className="glass relative h-full overflow-hidden rounded-3xl transition-colors duration-500 hover:border-gold/45"
+          className="glass relative h-full overflow-hidden rounded-3xl transition duration-500 hover:border-teal/50 hover:shadow-teal-glow"
         >
           {isFull && (
             <span aria-hidden="true" className="spotlight pointer-events-none absolute inset-0 z-20" />
           )}
 
-          <div className="relative aspect-[16/10] overflow-hidden bg-[#080c13]">
+          <div className="relative aspect-[16/10] overflow-hidden bg-surface">
             <Image
               src={project.cover}
               alt={project.title}
@@ -102,24 +97,24 @@ function ProjectCard({
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className={`${
                 project.coverFit === "contain"
-                  ? "object-contain bg-[#05080d] p-3"
+                  ? "object-contain bg-obsidian p-3"
                   : "object-cover object-top"
               } transition-transform duration-700 group-hover:scale-[1.04]`}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#070a0f] via-[#070a0f]/10 to-transparent" />
-            <span className={`absolute left-4 top-4 rounded-full border bg-[#070a0f]/70 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] backdrop-blur-sm ${categoryAccent}`}>
+            <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/10 to-transparent" />
+            <span className={`absolute left-4 top-4 rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] backdrop-blur-sm ${badgeClass}`}>
               {project.category}
             </span>
-            <span className="absolute right-4 top-4 rounded-full border border-white/10 bg-[#070a0f]/60 px-3 py-1 font-mono text-[10px] text-ivory/70 backdrop-blur-sm">
+            <span className="absolute right-4 top-4 rounded-full border border-border-subtle bg-obsidian/60 px-3 py-1 font-mono text-[10px] text-foreground/70 backdrop-blur-sm">
               {t(project.year)}
             </span>
-            <span className="absolute bottom-4 right-4 flex h-10 w-10 translate-y-2 items-center justify-center rounded-full bg-gold text-[#0a0e14] opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+            <span className="absolute bottom-4 right-4 flex h-10 w-10 translate-y-2 items-center justify-center rounded-full bg-gold text-obsidian opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
               <FaArrowRight />
             </span>
           </div>
 
           <div className="relative z-10 p-6 sm:p-7">
-            <h3 className="break-words font-display text-2xl leading-tight text-ivory transition group-hover:text-gold-soft sm:text-3xl">
+            <h3 className="break-words font-display text-2xl leading-tight text-foreground transition group-hover:text-gold sm:text-3xl">
               {project.title}
             </h3>
             <p className="mt-2 line-clamp-2 text-sm leading-6 text-muted">
@@ -129,7 +124,7 @@ function ProjectCard({
               {project.tags.slice(0, 3).map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full border border-gold/10 bg-gold/[0.04] px-2.5 py-1 text-[10px] text-gold-soft/80"
+                  className="rounded-full border border-border-subtle bg-gold/[0.04] px-2.5 py-1 text-[10px] text-gold/80"
                 >
                   {tag}
                 </span>
@@ -170,7 +165,7 @@ export default function Projects() {
   );
 
   return (
-    <section id="projects" className="relative border-t border-gold/10 py-24 sm:py-32">
+    <section id="projects" className="relative border-t border-border-subtle py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading
@@ -188,14 +183,14 @@ export default function Projects() {
                   onClick={() => setFilter(category)}
                   className={`relative rounded-full border px-4 py-2 text-xs font-semibold transition-colors ${
                     filter === category
-                      ? "border-transparent text-[#0a0e14]"
-                      : "border-gold/15 text-muted hover:border-gold/40 hover:text-ivory"
+                      ? "border-transparent text-obsidian"
+                      : "border-border-subtle text-muted hover:border-teal/40 hover:text-foreground"
                   }`}
                 >
                   {filter === category && (
                     <motion.span
                       layoutId={isFull ? "project-filter" : undefined}
-                      className="absolute inset-0 rounded-full bg-gradient-to-r from-gold-soft to-gold"
+                      className="absolute inset-0 rounded-full bg-gold"
                       transition={{ type: "spring", stiffness: 380, damping: 32 }}
                     />
                   )}

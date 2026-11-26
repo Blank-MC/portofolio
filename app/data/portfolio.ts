@@ -1,4 +1,5 @@
 import { L, type Localized } from "../lib/locale";
+import { palette } from "../lib/palette";
 
 export type ProjectCategory = "Web App" | "E-Commerce" | "Game";
 
@@ -183,7 +184,7 @@ export const projects: Project[] = [
     ],
     tags: ["Booking System", "Admin Dashboard", "Approval Flow", "Responsive"],
     cover: "/assets/projects/easycome-dashboard.png",
-    accent: "#d8b87c",
+    accent: palette.gold,
     featured: true,
     gallery: [
       { src: "/assets/projects/easycome-dashboard.png", alt: "EasyCome dashboard", caption: L("Dashboard admin dengan ringkasan seluruh aktivitas booking", "Admin dashboard with an overview of all booking activity") },
@@ -216,7 +217,7 @@ export const projects: Project[] = [
     ],
     tags: ["Construct 3", "Game Prototype", "Level Design", "Character"],
     cover: "/assets/projects/the-lost-boy-cover.jpg",
-    accent: "#79d6c4",
+    accent: palette.teal,
     gallery: [
       { src: "/assets/projects/the-lost-boy-cover.jpg", alt: "The Lost Boy gameplay", caption: L("Tampilan utama prototipe The Lost Boy", "Main view of The Lost Boy prototype") },
       { src: "/assets/projects/the-lost-boy-early.jpg", alt: "Early concept", caption: L("Konsep awal game kelas 10", "Early 10th-grade game concept") },
@@ -249,7 +250,7 @@ export const projects: Project[] = [
     ],
     tags: ["Game", "Puzzle", "Construct 3", "Team Project"],
     cover: "/assets/projects/frantic-cover.jpg",
-    accent: "#d8b87c",
+    accent: palette.gold,
     gallery: [
       { src: "/assets/projects/frantic-cover.jpg", alt: "Frantic gameplay", caption: L("Tampilan utama game Frantic", "Main view of Frantic") },
       { src: "/assets/projects/frantic-puzzle.jpg", alt: "Frantic puzzle", caption: L("Salah satu teka-teki dan catatan petunjuk dalam game", "One of the puzzles and clue notes in the game") },
@@ -281,7 +282,7 @@ export const projects: Project[] = [
     ],
     tags: ["Web App", "Mobile UI", "Admin Panel", "Chat"],
     cover: "/assets/projects/lost-found-cover.jpg",
-    accent: "#e0a96d",
+    accent: palette.goldHover,
     featured: true,
     gallery: [
       { src: "/assets/projects/lost-found-cover.jpg", alt: "Lost & Found app screens", caption: L("Tampilan aplikasi Lost & Found", "App screens of Lost & Found") },
@@ -312,7 +313,7 @@ export const projects: Project[] = [
     ],
     tags: ["CMS", "Article Manager", "Curation", "Dashboard"],
     cover: "/assets/projects/tradisi-dashboard.png",
-    accent: "#d8b87c",
+    accent: palette.gold,
     gallery: [
       { src: "/assets/projects/tradisi-dashboard.png", alt: "News dashboard", caption: L("Ringkasan aktivitas redaksi", "Overview of editorial activity") },
       { src: "/assets/projects/tradisi-editor.png", alt: "Article editor", caption: L("Halaman pembuatan artikel", "Article creation page") },
@@ -346,7 +347,7 @@ export const projects: Project[] = [
     ],
     tags: ["Library System", "Admin Panel", "Loans", "Database", "Full Stack"],
     cover: "/assets/projects/perpus-dashboard.png",
-    accent: "#9bb8e8",
+    accent: palette.teal,
     gallery: [
       { src: "/assets/projects/perpus-dashboard.png", alt: "Library dashboard", caption: L("Dashboard admin", "Admin dashboard") },
       { src: "/assets/projects/perpus-buku.png", alt: "Book data", caption: L("Manajemen koleksi buku", "Book collection management") },
@@ -378,7 +379,7 @@ export const projects: Project[] = [
     tags: ["CMS", "Article", "Responsive", "UI"],
     cover: "/assets/projects/prakerin-home.jpg",
     coverFit: "contain",
-    accent: "#c9a4d8",
+    accent: palette.tealDeep,
     gallery: [
       { src: "/assets/projects/prakerin-home.jpg", alt: "Article portal home", caption: L("Tampilan beranda versi penuh", "Full-page home view") },
       { src: "/assets/projects/prakerin-artikel.jpg", alt: "Article list", caption: L("Halaman daftar artikel", "Article list page") },
@@ -407,7 +408,7 @@ export const projects: Project[] = [
     ],
     tags: ["E-Commerce", "Cart & Checkout", "Admin Panel", "Database", "Full Stack"],
     cover: "/assets/projects/ecommerce-home.jpg",
-    accent: "#7cc6a8",
+    accent: palette.teal,
     gallery: [
       { src: "/assets/projects/ecommerce-home.jpg", alt: "Store home", caption: L("Halaman utama katalog produk", "Home page of the product catalog") },
     ],

@@ -12,6 +12,7 @@ import { Reveal, Stagger, StaggerItem } from "../ui/Primitives";
 import { profile } from "../../data/portfolio";
 import { useLocale } from "../../lib/i18n";
 import { L } from "../../lib/locale";
+import { palette } from "../../lib/palette";
 
 interface Repo {
   id: number;
@@ -76,10 +77,10 @@ function RepoSkeleton() {
     <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
       {[0, 1, 2].map((index) => (
         <div key={index} className="glass h-[220px] animate-pulse rounded-3xl p-7">
-          <div className="h-3 w-20 rounded bg-white/10" />
-          <div className="mt-6 h-6 w-2/3 rounded bg-white/10" />
-          <div className="mt-4 h-3 w-full rounded bg-white/5" />
-          <div className="mt-2 h-3 w-4/5 rounded bg-white/5" />
+          <div className="h-3 w-20 rounded bg-surface-hover" />
+          <div className="mt-6 h-6 w-2/3 rounded bg-surface-hover" />
+          <div className="mt-4 h-3 w-full rounded bg-border-subtle" />
+          <div className="mt-2 h-3 w-4/5 rounded bg-border-subtle" />
         </div>
       ))}
     </div>
@@ -88,7 +89,7 @@ function RepoSkeleton() {
 
 function RepoCard({ repo }: { repo: Repo }) {
   const { t, locale } = useLocale();
-  const color = repo.language ? languageColors[repo.language] ?? "#d8b87c" : "#d8b87c";
+  const color = repo.language ? languageColors[repo.language] ?? palette.gold : palette.gold;
 
   return (
     <StaggerItem>
@@ -96,16 +97,16 @@ function RepoCard({ repo }: { repo: Repo }) {
         href={repo.html_url}
         target="_blank"
         rel="noreferrer"
-        className="glass group flex h-full flex-col rounded-3xl p-6 transition hover:border-gold/40 sm:p-7"
+        className="glass group flex h-full flex-col rounded-3xl p-6 transition hover:border-teal/50 hover:shadow-teal-glow sm:p-7"
       >
         <div className="flex items-start justify-between gap-3">
-          <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-gold/20 bg-gold/5 text-gold transition group-hover:bg-gold group-hover:text-[#0a0e14]">
+          <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-teal/20 bg-teal/5 text-teal transition group-hover:border-teal/40 group-hover:bg-teal/10">
             <FaGithub />
           </span>
-          <FaExternalLinkAlt className="text-xs text-muted transition group-hover:text-gold" />
+          <FaExternalLinkAlt className="text-xs text-muted transition group-hover:text-teal" />
         </div>
 
-        <h3 className="mt-6 break-all font-display text-2xl leading-tight text-ivory">
+        <h3 className="mt-6 break-all font-display text-2xl leading-tight text-foreground">
           {repo.name}
         </h3>
         <p className="mt-3 line-clamp-3 text-sm leading-6 text-muted">
@@ -124,13 +125,13 @@ function RepoCard({ repo }: { repo: Repo }) {
               </span>
             )}
             <span className="flex items-center gap-1.5">
-              <FaStar className="text-gold/70" /> {repo.stargazers_count}
+              <FaStar className="text-teal/70" /> {repo.stargazers_count}
             </span>
             <span className="flex items-center gap-1.5">
-              <FaCodeBranch className="text-gold/70" /> {repo.forks_count}
+              <FaCodeBranch className="text-teal/70" /> {repo.forks_count}
             </span>
           </div>
-          <div className="mt-5 flex items-center justify-between border-t border-gold/10 pt-4">
+          <div className="mt-5 flex items-center justify-between border-t border-border-subtle pt-4">
             <span className="text-[11px] text-muted/60">
               {t(copy.updated)} {relativeDate(repo.updated_at, locale)}
             </span>
@@ -202,7 +203,7 @@ export default function OpenSource() {
   }, []);
 
   return (
-    <section id="opensource" className="relative border-t border-gold/10 py-24 sm:py-32">
+    <section id="opensource" className="relative border-t border-border-subtle py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         <SectionHeading
           index="05"
@@ -234,7 +235,7 @@ export default function OpenSource() {
                   href={profile.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-2.5 text-xs font-bold text-[#0a0e14] transition hover:bg-gold-soft"
+                  className="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-2.5 text-xs font-bold text-obsidian transition hover:bg-gold-hover"
                 >
                   {t(copy.profile)} <FaExternalLinkAlt />
                 </a>

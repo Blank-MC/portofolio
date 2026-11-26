@@ -21,11 +21,11 @@ export default function SectionHeading({
         <div
           className={`flex items-center gap-4 ${align === "center" ? "justify-center" : ""}`}
         >
-          <span className="num font-mono text-xs text-teal">{index}</span>
-          <span className="h-px w-10 bg-gradient-to-r from-teal/60 to-gold/40" />
+          <span className="num font-mono text-xs text-gold">{index}</span>
+          <span className="h-px w-10 bg-gradient-to-r from-gold/50 to-teal/40" />
           <span className="text-xs text-muted">{eyebrow}</span>
         </div>
-        <h2 className="mt-5 font-display text-4xl leading-tight text-ivory sm:text-5xl lg:text-6xl">
+        <h2 className="mt-5 font-display text-4xl leading-tight text-foreground sm:text-5xl lg:text-6xl">
           {title}
         </h2>
         {description && (

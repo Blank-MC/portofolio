@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import type { CSSProperties } from 'react';
 import * as THREE from 'three';
 
+import { palette } from '../../lib/palette';
 import './Lanyard.css';
 
 type Orientation = 'portrait' | 'landscape';
@@ -302,7 +303,7 @@ if (foilStrength > 0.0) {
 
 const METALS: Record<string, { color: string; roughness: number }> = {
   silver: { color: '#d9dce2', roughness: 0.16 },
-  gold: { color: '#e4b965', roughness: 0.2 },
+  gold: { color: palette.gold, roughness: 0.2 },
   graphite: { color: '#4d4f55', roughness: 0.28 }
 };
 
@@ -873,7 +874,7 @@ const Lanyard = ({
   frontImage,
   backImage,
   imageFit = 'cover',
-  cardColor = '#ffffff',
+  cardColor = palette.foreground,
   orientation = 'portrait',
   finish = 'glossy',
   cornerRadius = 0.3,
@@ -881,7 +882,7 @@ const Lanyard = ({
   anchor = 'center',
   strapLength = 0.5,
   strapImage,
-  strapColor = '#111111',
+  strapColor = palette.surface,
   strapWidth = 0.65,
   metal = 'silver',
   gravity = 1,

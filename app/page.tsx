@@ -56,7 +56,7 @@ function Portfolio() {
 
   return (
     <MotionConfig reducedMotion={mode === "performance" ? "always" : "never"}>
-      <div className="relative min-h-screen bg-ink text-ivory">
+      <div className="relative min-h-screen bg-obsidian text-foreground">
         <ScrollProgress />
         <Navbar />
 

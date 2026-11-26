@@ -79,7 +79,7 @@ function Marquee({ items, reverse = false }: { items: string[]; reverse?: boolea
             {repeated.map((item, index) => (
               <span
                 key={`${group}-${index}-${item}`}
-                className="whitespace-nowrap rounded-full border border-gold/15 bg-gold/[0.03] px-5 py-2.5 text-sm font-medium text-ivory/75"
+                className="whitespace-nowrap rounded-full border border-gold/15 bg-gold/[0.03] px-5 py-2.5 text-sm font-medium text-foreground/75"
               >
                 {item}
               </span>
@@ -99,7 +99,7 @@ export default function Skills() {
   const secondHalf = names.slice(8);
 
   return (
-    <section id="skills" className="relative overflow-hidden border-t border-gold/10 py-24 sm:py-32">
+    <section id="skills" className="relative overflow-hidden border-t border-border-subtle py-24 sm:py-32">
       <div aria-hidden="true" className="fx-only pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/[0.04] blur-[100px]" />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
@@ -120,17 +120,17 @@ export default function Skills() {
           {groups.map((group) => {
             const items = skills.filter((skill) => skill.group === group);
             const groupAccent =
-              group === "Creative"
+              group === "Backend"
                 ? "text-teal"
-                : group === "Backend"
-                  ? "text-iris"
-                  : "text-gold-soft";
+                : group === "Creative"
+                  ? "text-gold-hover"
+                  : "text-gold";
             const barAccent =
-              group === "Creative"
-                ? "bg-gradient-to-r from-teal to-gold-soft"
-                : group === "Backend"
-                  ? "bg-gradient-to-r from-iris to-gold-soft"
-                  : "bg-gradient-to-r from-gold to-gold-soft";
+              group === "Backend"
+                ? "bg-gradient-to-r from-teal to-teal-deep"
+                : group === "Creative"
+                  ? "bg-gradient-to-r from-gold-hover to-gold"
+                  : "bg-gradient-to-r from-gold to-gold-hover";
             return (
               <StaggerItem key={group}>
                 <div className="glass flex h-full flex-col rounded-3xl p-6 sm:p-8">
@@ -144,10 +144,10 @@ export default function Skills() {
                     {items.map((skill) => (
                       <div key={skill.name}>
                         <div className="flex items-center justify-between text-xs">
-                          <span className="font-medium text-ivory/85">{skill.name}</span>
+                          <span className="font-medium text-foreground/85">{skill.name}</span>
                           <span className="font-mono text-gold/70">{skill.level}%</span>
                         </div>
-                        <div className="mt-2 h-[3px] overflow-hidden rounded-full bg-white/8">
+                        <div className="mt-2 h-[3px] overflow-hidden rounded-full bg-border-subtle">
                           <motion.div
                             className={`h-full rounded-full ${barAccent}`}
                             initial={isFull ? { width: 0 } : false}
@@ -159,7 +159,7 @@ export default function Skills() {
                       </div>
                     ))}
                   </div>
-                  <p className="mt-8 border-t border-gold/10 pt-5 text-[11px] leading-relaxed text-muted">
+                  <p className="mt-8 border-t border-border-subtle pt-5 text-[11px] leading-relaxed text-secondary">
                     {t(copy.notes[group])}
                   </p>
                 </div>

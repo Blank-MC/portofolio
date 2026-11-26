@@ -140,7 +140,7 @@ export function ProjectModal({
     <AnimatePresence>
       {project && (
         <motion.div
-          className="fixed inset-0 z-[100] flex items-start justify-center overflow-y-auto bg-[#030508]/92 px-3 py-5 backdrop-blur-md sm:px-6 sm:py-12"
+          className="fixed inset-0 z-[100] flex items-start justify-center overflow-y-auto bg-obsidian/92 px-3 py-5 backdrop-blur-md sm:px-6 sm:py-12"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -163,13 +163,13 @@ export function ProjectModal({
               type="button"
               onClick={onClose}
               aria-label={t(copy.close)}
-              className="absolute right-4 top-4 z-20 flex h-10 w-10 items-center justify-center rounded-full border border-gold/20 bg-[#0a0e15]/80 text-ivory transition hover:border-gold hover:text-gold"
+              className="absolute right-4 top-4 z-20 flex h-10 w-10 items-center justify-center rounded-full border border-gold/20 bg-surface/80 text-foreground transition hover:border-gold hover:text-gold"
             >
               <FaTimes />
             </button>
 
             <div className="grid lg:grid-cols-[1.05fr_0.95fr]">
-              <div className="relative flex min-h-[240px] items-center justify-center overflow-hidden bg-[#080c13] p-3 sm:min-h-[280px] sm:p-6 lg:min-h-[620px]">
+              <div className="relative flex min-h-[240px] items-center justify-center overflow-hidden bg-surface p-3 sm:min-h-[280px] sm:p-6 lg:min-h-[620px]">
                 <div
                   className="pointer-events-none absolute inset-0 opacity-60"
                   style={{
@@ -179,7 +179,7 @@ export function ProjectModal({
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={`${project.id}-${active}`}
-                    className="relative aspect-video w-full overflow-hidden rounded-xl border border-white/10 bg-black/40"
+                    className="relative aspect-video w-full overflow-hidden rounded-xl border border-border-subtle bg-obsidian/40"
                     initial={isFull ? { opacity: 0, scale: 1.03 } : false}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={isFull ? { opacity: 0, scale: 0.99 } : { opacity: 0 }}
@@ -204,7 +204,7 @@ export function ProjectModal({
                       onClick={() =>
                         setActive((i) => (i - 1 + project.gallery.length) % project.gallery.length)
                       }
-                      className="absolute left-2 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-gold/20 bg-[#0a0e15]/80 text-gold transition hover:bg-gold hover:text-[#0a0e14] sm:left-7"
+                      className="absolute left-2 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-gold/20 bg-surface/80 text-gold transition hover:bg-gold hover:text-obsidian sm:left-7"
                     >
                       <FaArrowLeft />
                     </button>
@@ -212,7 +212,7 @@ export function ProjectModal({
                       type="button"
                       aria-label={t(copy.nextImage)}
                       onClick={() => setActive((i) => (i + 1) % project.gallery.length)}
-                      className="absolute right-2 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-gold/20 bg-[#0a0e15]/80 text-gold transition hover:bg-gold hover:text-[#0a0e14] sm:right-7"
+                      className="absolute right-2 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-gold/20 bg-surface/80 text-gold transition hover:bg-gold hover:text-obsidian sm:right-7"
                     >
                       <FaArrowRight />
                     </button>
@@ -226,7 +226,7 @@ export function ProjectModal({
                   <span className="hidden h-px w-8 bg-gold/40 sm:block" />
                   <span className="text-muted">{t(project.year)}</span>
                 </div>
-                <h3 className="mt-3 break-words font-display text-[2rem] leading-[1.08] text-ivory sm:text-4xl lg:text-5xl">
+                <h3 className="mt-3 break-words font-display text-[2rem] leading-[1.08] text-foreground sm:text-4xl lg:text-5xl">
                   {project.title}
                 </h3>
                 <p className="mt-2 break-words text-sm text-gold/80">{t(project.role)}</p>
@@ -238,14 +238,14 @@ export function ProjectModal({
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full border border-gold/15 bg-gold/5 px-3 py-1.5 text-xs text-gold-soft/90"
+                      className="rounded-full border border-gold/15 bg-gold/5 px-3 py-1.5 text-xs text-gold/90"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <div className="mt-6 space-y-3 border-t border-gold/10 pt-5 sm:mt-7 sm:space-y-4 sm:pt-6">
+                <div className="mt-6 space-y-3 border-t border-border-subtle pt-5 sm:mt-7 sm:space-y-4 sm:pt-6">
                   {project.description.map((paragraph) => (
                     <p key={paragraph.id} className="break-words text-[13px] leading-6 text-muted sm:text-sm sm:leading-7">
                       {t(paragraph)}
@@ -284,7 +284,7 @@ export function ProjectModal({
                       href={`mailto:${profile.email}?subject=${encodeURIComponent(
                         `Diskusi proyek: ${project.title}`
                       )}`}
-                      className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-5 py-2.5 text-center text-xs font-bold text-[#0a0e14] transition hover:bg-gold-soft sm:w-auto"
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-5 py-2.5 text-center text-xs font-bold text-obsidian transition hover:bg-gold-hover sm:w-auto"
                     >
                       {t(copy.discuss)} <FaExternalLinkAlt />
                     </a>
@@ -294,7 +294,7 @@ export function ProjectModal({
             </div>
 
             {project.gallery.length > 1 && (
-              <div className="flex max-w-full gap-3 overflow-x-auto border-t border-gold/10 p-4 sm:p-5">
+              <div className="flex max-w-full gap-3 overflow-x-auto border-t border-border-subtle p-4 sm:p-5">
                 {project.gallery.map((image, index) => (
                   <button
                     key={image.src}
@@ -304,7 +304,7 @@ export function ProjectModal({
                     className={`relative h-14 w-24 shrink-0 overflow-hidden rounded-lg border transition ${
                       active === index
                         ? "border-gold opacity-100"
-                        : "border-white/10 opacity-50 hover:opacity-90"
+                        : "border-border-subtle opacity-50 hover:opacity-90"
                     }`}
                   >
                     <Image
@@ -363,7 +363,7 @@ export function CertificateModal({
     <AnimatePresence>
       {certificate && (
         <motion.div
-          className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto bg-[#030508]/94 px-4 py-8 backdrop-blur-md"
+          className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto bg-obsidian/94 px-4 py-8 backdrop-blur-md"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -382,10 +382,10 @@ export function CertificateModal({
             exit={{ opacity: 0 }}
             transition={{ type: "spring", stiffness: 220, damping: 28 }}
           >
-            <div className="flex items-start justify-between gap-4 border-b border-gold/10 p-6 sm:p-8">
+            <div className="flex items-start justify-between gap-4 border-b border-border-subtle p-6 sm:p-8">
               <div>
                 <p className="section-label">{t(copy.certificate)} · {certificate.year}</p>
-                <h3 className="mt-2 font-display text-3xl text-ivory sm:text-4xl">
+                <h3 className="mt-2 font-display text-3xl text-foreground sm:text-4xl">
                   {t(certificate.title)}
                 </h3>
                 <p className="mt-2 text-sm text-muted">{t(certificate.issuer)}</p>
@@ -394,21 +394,21 @@ export function CertificateModal({
                 type="button"
                 onClick={onClose}
                 aria-label={t(copy.close)}
-                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gold/20 text-ivory transition hover:border-gold hover:text-gold"
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gold/20 text-foreground transition hover:border-gold hover:text-gold"
               >
                 <FaTimes />
               </button>
             </div>
 
-            <div className="bg-[#080c13] p-4 sm:p-7">
+            <div className="bg-surface p-4 sm:p-7">
               {certificate.type === "pdf" ? (
                 <iframe
                   src={certificate.file}
                   title={t(certificate.title)}
-                  className="h-[55vh] min-h-[380px] w-full rounded-xl border border-white/10 bg-white"
+                  className="h-[55vh] min-h-[380px] w-full rounded-xl border border-border-subtle bg-surface"
                 />
               ) : (
-                <div className="relative mx-auto aspect-[1.414/1] w-full max-w-3xl overflow-hidden rounded-xl border border-white/10 bg-black/30">
+                <div className="relative mx-auto aspect-[1.414/1] w-full max-w-3xl overflow-hidden rounded-xl border border-border-subtle bg-obsidian/30">
                   <Image
                     src={images[active]}
                     alt={t(certificate.title)}
@@ -428,7 +428,7 @@ export function CertificateModal({
                       onClick={() => setActive(index)}
                       aria-label={`${t(copy.seeImage)} ${t(copy.certificate)} ${index + 1}`}
                       className={`h-12 w-16 overflow-hidden rounded-md border transition ${
-                        active === index ? "border-gold" : "border-white/10 opacity-50"
+                        active === index ? "border-gold" : "border-border-subtle opacity-50"
                       }`}
                     >
                       <Image src={image} alt="" width={64} height={48} className="h-full w-full object-cover" />
@@ -438,7 +438,7 @@ export function CertificateModal({
               )}
             </div>
 
-            <div className="flex flex-col gap-4 border-t border-gold/10 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
+            <div className="flex flex-col gap-4 border-t border-border-subtle p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
               <div className="max-w-xl">
                 <p className="text-sm leading-6 text-muted">{t(certificate.description)}</p>
                 {certificate.credential && (
@@ -461,7 +461,7 @@ export function CertificateModal({
                 <a
                   href={certificate.file}
                   download
-                  className="flex h-11 items-center gap-2 rounded-full bg-gold px-5 text-xs font-bold text-[#0a0e14] transition hover:bg-gold-soft"
+                  className="flex h-11 items-center gap-2 rounded-full bg-gold px-5 text-xs font-bold text-obsidian transition hover:bg-gold-hover"
                 >
                   <FaDownload /> {t(copy.download)}
                 </a>

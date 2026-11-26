@@ -6,7 +6,7 @@ import { L } from "../../lib/locale";
 export default function Footer() {
   const { t } = useLocale();
   return (
-    <footer className="border-t border-gold/10 py-8">
+    <footer className="border-t border-border-subtle py-8">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-5 text-center sm:flex-row sm:px-8 sm:text-left lg:px-12">
         <p className="text-xs text-muted">
           © {new Date().getFullYear()} Rezya Indy Saputra.{" "}

@@ -9,6 +9,7 @@ import { contactVisibility, profile, stats } from "../../data/portfolio";
 import { useExperience } from "../providers/ExperienceProvider";
 import { useLocale } from "../../lib/i18n";
 import { L } from "../../lib/locale";
+import { palette } from "../../lib/palette";
 
 const Lanyard = dynamic(() => import("../Lanyard/Lanyard"), {
   ssr: false,
@@ -34,20 +35,20 @@ const copy = {
 function StaticIdCard() {
   return (
     <div className="relative flex h-[420px] w-[260px] items-center justify-center sm:h-[480px] sm:w-[300px]">
-      <div className="absolute inset-8 rounded-[2rem] border border-gold/10" />
-      <div className="absolute inset-2 rounded-[2rem] border border-dashed border-gold/10" />
-      <div className="glass relative flex h-[380px] w-full max-w-[270px] rotate-[-4deg] flex-col justify-between overflow-hidden rounded-3xl p-6 shadow-2xl shadow-black/50">
+      <div className="absolute inset-8 rounded-[2rem] border border-border-subtle" />
+      <div className="absolute inset-2 rounded-[2rem] border border-dashed border-border-subtle" />
+      <div className="glass relative flex h-[380px] w-full max-w-[270px] rotate-[-4deg] flex-col justify-between overflow-hidden rounded-3xl p-6 shadow-2xl shadow-obsidian/50">
         <div className="flex items-start justify-between">
           <span className="font-display text-3xl text-gold">RA</span>
           <span className="h-8 w-8 rounded-full border border-gold/40" />
         </div>
         <div>
           <div className="mb-5 h-28 w-28 rounded-full bg-gradient-to-br from-gold/40 via-gold/10 to-transparent p-[1px]">
-            <div className="flex h-full w-full items-center justify-center rounded-full bg-[#0b1018] font-display text-5xl text-gold-soft">
+            <div className="flex h-full w-full items-center justify-center rounded-full bg-surface font-display text-5xl text-gold">
               R
             </div>
           </div>
-          <p className="font-display text-3xl leading-none text-ivory">Rezya</p>
+          <p className="font-display text-3xl leading-none text-foreground">Rezya</p>
           <p className="mt-1 text-[11px] uppercase tracking-[0.3em] text-gold">
             Full Stack Dev
           </p>
@@ -76,7 +77,7 @@ export default function Hero() {
       <div aria-hidden="true" className="fx-only pointer-events-none absolute inset-0">
         <div className="grid-bg absolute inset-0" />
         <div className="absolute left-[12%] top-[18%] h-[420px] w-[420px] rounded-full bg-gold/10 blur-[130px]" />
-        <div className="absolute bottom-[8%] right-[10%] h-[360px] w-[360px] rounded-full bg-teal/20 blur-[130px]" />
+        <div className="absolute bottom-[8%] right-[10%] h-[360px] w-[360px] rounded-full bg-teal-deep/10 blur-[130px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
@@ -100,18 +101,18 @@ export default function Hero() {
             </Reveal>
 
             <Reveal delay={0.14}>
-              <h1 className="mt-6 font-display text-[4.5rem] leading-[0.88] text-ivory sm:text-7xl lg:text-[6.5rem]">
+              <h1 className="mt-6 font-display text-[4.5rem] leading-[0.88] text-foreground sm:text-7xl lg:text-[6.5rem]">
                 Rezya
-                <span className="text-teal">.</span>
+                <span className="text-gold">.</span>
               </h1>
             </Reveal>
 
             <Reveal delay={0.2}>
-              <p className="mt-8 text-lg font-medium text-ivory/70 sm:mt-9 sm:text-xl">
+              <p className="mt-8 text-lg font-medium text-foreground/70 sm:mt-9 sm:text-xl">
                 {t(copy.intro)}{" "}
                 <RotatingText
                   texts={copy.roles.map(t)}
-                  mainClassName="inline-flex overflow-hidden px-3 py-1.5 align-middle rounded-xl border border-gold/30 bg-gold/5 text-gold-soft text-lg sm:text-xl font-semibold"
+                  mainClassName="inline-flex overflow-hidden px-3 py-1.5 align-middle rounded-xl border border-gold/30 bg-gold/5 text-gold text-lg sm:text-xl font-semibold"
                   rotationInterval={2400}
                   staggerDuration={0.022}
                   staggerFrom="first"
@@ -121,7 +122,7 @@ export default function Hero() {
             </Reveal>
 
             <Reveal delay={0.26}>
-              <p className="mt-7 max-w-xl text-base leading-8 text-muted">
+              <p className="mt-7 max-w-xl text-base leading-8 text-secondary">
                 {t(profile.bio)}
               </p>
             </Reveal>
@@ -131,7 +132,7 @@ export default function Hero() {
                 <Magnetic>
                   <a
                     href="#projects"
-                    className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-gold-soft to-gold px-7 py-3.5 text-sm font-bold text-[#0a0e14] transition hover:shadow-lg hover:shadow-gold/20"
+                    className="group inline-flex items-center gap-3 rounded-full bg-gold px-7 py-3.5 text-sm font-bold text-obsidian transition-colors hover:bg-gold-hover hover:shadow-lg hover:shadow-gold/20"
                   >
                     {t(copy.view)}
                     <span className="transition-transform group-hover:translate-x-1">→</span>
@@ -176,7 +177,7 @@ export default function Hero() {
                     rel="noreferrer"
                     aria-label={label}
                     title={label}
-                    className="flex h-9 w-9 items-center justify-center rounded-full border border-gold/15 text-muted transition hover:border-gold/50 hover:text-gold"
+                    className="flex h-9 w-9 items-center justify-center rounded-full border border-border-subtle text-muted transition hover:border-gold/50 hover:text-gold"
                   >
                     <Icon />
                   </a>
@@ -186,9 +187,10 @@ export default function Hero() {
           </motion.div>
 
           <div className="relative flex h-[460px] items-center justify-center sm:h-[540px] lg:h-[600px]">
-            <div aria-hidden="true" className="absolute inset-0 flex items-center justify-center">
-              <div className="h-[300px] w-[300px] rounded-full border border-gold/10 sm:h-[380px] sm:w-[380px]" />
-              <div className="absolute h-[240px] w-[240px] rounded-full border border-dashed border-gold/10 sm:h-[310px] sm:w-[310px]" />
+            <div aria-hidden="true" className="fx-only pointer-events-none absolute inset-0 flex items-center justify-center">
+              <div className="h-[300px] w-[300px] rounded-full border border-border-subtle sm:h-[380px] sm:w-[380px]" />
+              <div className="absolute h-[240px] w-[240px] rounded-full border border-dashed border-border-subtle sm:h-[310px] sm:w-[310px]" />
+              <div className="absolute h-[300px] w-[300px] rounded-full bg-teal-deep/15 blur-3xl sm:h-[380px] sm:w-[380px]" />
             </div>
             {isFull && ready ? (
               <Lanyard
@@ -196,14 +198,14 @@ export default function Hero() {
                 backImage="/card-back.png"
                 strapImage="/band.png"
                 imageFit="cover"
-                cardColor="#ffffff"
+                cardColor={palette.foreground}
                 orientation="portrait"
                 finish="glossy"
                 cornerRadius={0.3}
                 size={0.6}
                 anchor="center"
                 strapLength={0.5}
-                strapColor="#111111"
+                strapColor={palette.surface}
                 strapWidth={0.65}
                 metal="silver"
                 gravity={1}
@@ -220,10 +222,10 @@ export default function Hero() {
         </div>
 
         <Reveal delay={0.45}>
-          <div className="mt-12 grid grid-cols-3 gap-4 border-t border-gold/10 pt-8 sm:gap-8">
+          <div className="mt-12 grid grid-cols-3 gap-4 border-t border-border-subtle pt-8 sm:gap-8">
             {stats.map((stat) => (
               <div key={stat.label.id}>
-                <p className="font-display text-4xl text-gold-soft sm:text-5xl">
+                <p className="font-display text-4xl text-gold sm:text-5xl">
                   <StatCounter value={stat.value} suffix={stat.suffix} />
                 </p>
                 <p className="mt-1 text-[11px] uppercase tracking-[0.18em] text-muted sm:text-xs">

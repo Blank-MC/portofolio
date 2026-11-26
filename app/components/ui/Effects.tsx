@@ -13,6 +13,7 @@ import { FaBolt, FaLeaf, FaArrowUp } from "react-icons/fa";
 import { useExperience } from "../providers/ExperienceProvider";
 import { useLocale } from "../../lib/i18n";
 import { L } from "../../lib/locale";
+import { palette } from "../../lib/palette";
 
 const copy = {
   performance: L("Performa", "Performance"),
@@ -42,7 +43,7 @@ export function ModeToggle() {
           initial={{ opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 6 }}
-          className="hidden rounded-full border border-gold/15 bg-[#0d131d]/90 px-3 py-1 text-[10px] tracking-widest text-gold/80 uppercase sm:block"
+          className="hidden rounded-full border border-border-subtle bg-surface/90 px-3 py-1 text-[10px] tracking-widest text-gold/80 uppercase sm:block"
         >
           {mode === "full" ? t(copy.effectsOn) : t(copy.resourceSave)}
         </motion.span>
@@ -63,14 +64,14 @@ export function ModeToggle() {
               aria-pressed={active}
               title={value === "full" ? t(copy.enableFull) : t(copy.disableFull)}
               className={`relative flex items-center gap-2 rounded-full px-3.5 py-2 text-xs font-semibold transition-colors sm:px-4 ${
-                active ? "text-[#0a0e14]" : "text-muted hover:text-ivory"
+                active ? "text-obsidian" : "text-muted hover:text-foreground"
               }`}
             >
               {active && (
                 <motion.span
                   layoutId="mode-pill"
                   transition={{ type: "spring", stiffness: 420, damping: 34 }}
-                  className="absolute inset-0 rounded-full bg-gradient-to-r from-gold-soft to-gold"
+                  className="absolute inset-0 rounded-full bg-gold"
                 />
               )}
               <Icon className="relative z-10 text-sm" />
@@ -123,11 +124,13 @@ export function CustomCursor() {
       animate={{
         scale: hovering ? 2.1 : 1,
         opacity: hovering ? 0.45 : 0.8,
-        borderColor: hovering ? "rgba(216,184,124,0.95)" : "rgba(216,184,124,0.5)",
+        borderColor: hovering
+          ? `rgba(${palette.goldRgb},0.95)`
+          : `rgba(${palette.goldRgb},0.5)`,
       }}
       transition={{ type: "spring", stiffness: 300, damping: 24 }}
     >
-      <span className="absolute left-1/2 top-1/2 h-1 w-1 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold-soft" />
+      <span className="absolute left-1/2 top-1/2 h-1 w-1 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold-hover" />
     </motion.div>
   );
 }
@@ -198,8 +201,8 @@ export function ParticleField() {
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
           ctx.fillStyle = p.gold
-            ? "rgba(216,184,124,0.42)"
-            : "rgba(121,214,196,0.32)";
+            ? `rgba(${palette.goldRgb},0.42)`
+            : `rgba(${palette.tealRgb},0.32)`;
           ctx.fill();
         }
         for (let i = 0; i < particles.length; i++) {
@@ -211,7 +214,7 @@ export function ParticleField() {
               ctx.beginPath();
               ctx.moveTo(a.x, a.y);
               ctx.lineTo(b.x, b.y);
-              ctx.strokeStyle = `rgba(216,184,124,${(1 - distance / 125) * 0.1})`;
+              ctx.strokeStyle = `rgba(${palette.goldRgb},${(1 - distance / 125) * 0.1})`;
               ctx.lineWidth = 0.6;
               ctx.stroke();
             }
@@ -256,7 +259,7 @@ export function ScrollProgress() {
   return (
     <motion.div
       aria-hidden="true"
-      className="fixed left-0 top-0 z-[110] h-[2px] w-full origin-left bg-gradient-to-r from-gold-soft via-gold to-teal"
+      className="fixed left-0 top-0 z-[110] h-[2px] w-full origin-left bg-gradient-to-r from-gold-hover via-gold to-teal"
       style={{ scaleX }}
     />
   );
@@ -292,7 +295,7 @@ export function BackToTop() {
           initial={{ opacity: 0, scale: 0.6 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.6 }}
-          className="glass-strong fixed bottom-24 left-5 z-[90] flex h-10 w-10 items-center justify-center rounded-full text-gold transition hover:text-gold-soft sm:bottom-5 sm:left-5"
+          className="glass-strong fixed bottom-24 left-5 z-[90] flex h-10 w-10 items-center justify-center rounded-full text-gold transition hover:text-gold-hover sm:bottom-5 sm:left-5"
         >
           <FaArrowUp />
         </motion.button>

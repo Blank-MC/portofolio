@@ -24,7 +24,7 @@ function LanguageSwitch({ compact = false }: { compact?: boolean }) {
     <div
       role="group"
       aria-label="Language"
-      className="flex items-center rounded-full border border-gold/20 p-0.5"
+      className="flex items-center rounded-full border border-border-subtle p-0.5"
     >
       {(["id", "en"] as const).map((value) => (
         <button
@@ -33,7 +33,7 @@ function LanguageSwitch({ compact = false }: { compact?: boolean }) {
           onClick={() => setLocale(value)}
           aria-pressed={locale === value}
           className={`relative rounded-full px-2.5 py-1 text-[10px] font-bold uppercase transition-colors ${
-            locale === value ? "text-[#0a0e14]" : "text-muted hover:text-ivory"
+            locale === value ? "text-obsidian" : "text-muted hover:text-foreground"
           }`}
         >
           {locale === value && (
@@ -98,17 +98,17 @@ export default function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-[80] transition-all duration-500 ${
         scrolled
-          ? "border-b border-gold/10 bg-[#070a0f]/85 py-3 backdrop-blur-xl"
+          ? "border-b border-border-subtle bg-obsidian/85 py-3 backdrop-blur-xl"
           : "border-b border-transparent py-5"
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-12">
         <a href="#home" className="group flex items-center gap-3" aria-label="Rezya.dev">
-          <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-gold/40 bg-gold/5 font-display text-lg text-gold transition group-hover:bg-gold group-hover:text-[#0a0e14]">
+          <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-gold/40 bg-gold/5 font-display text-lg text-gold transition group-hover:bg-gold group-hover:text-obsidian">
             RA
           </span>
-          <span className="text-sm font-bold tracking-tight text-ivory sm:text-base">
-            rezya<span className="text-teal">.</span>dev
+          <span className="text-sm font-bold tracking-tight text-foreground sm:text-base">
+            rezya<span className="text-gold">.</span>dev
           </span>
         </a>
 
@@ -118,13 +118,13 @@ export default function Navbar() {
               key={link.id}
               href={`#${link.id}`}
               className={`relative rounded-full px-3.5 py-2 text-[13px] font-medium transition-colors ${
-                active === link.id ? "text-gold-soft" : "text-muted hover:text-ivory"
+                active === link.id ? "text-gold" : "text-muted hover:text-foreground"
               }`}
             >
               {active === link.id && (
                 <motion.span
                   layoutId={isFull ? "nav-active" : undefined}
-                  className="absolute inset-0 rounded-full border border-teal/25 bg-teal/5"
+                  className="absolute inset-0 rounded-full border border-gold/25 bg-gold/5"
                   transition={{ type: "spring", stiffness: 380, damping: 32 }}
                 />
               )}
@@ -143,7 +143,7 @@ export default function Navbar() {
               download
               target="_blank"
               rel="noreferrer"
-              className="hidden items-center gap-2 rounded-full border border-gold/40 px-4 py-2 text-xs font-bold text-gold transition hover:bg-gold hover:text-[#0a0e14] xl:flex"
+              className="hidden items-center gap-2 rounded-full border border-gold/40 px-4 py-2 text-xs font-bold text-gold transition hover:bg-gold hover:text-obsidian xl:flex"
             >
               <FaDownload /> CV
             </a>
@@ -167,7 +167,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.28 }}
-            className="overflow-hidden border-t border-gold/10 bg-[#070a0f]/97 xl:hidden"
+            className="overflow-hidden border-t border-border-subtle bg-obsidian/97 xl:hidden"
           >
             <div className="flex flex-col px-6 py-5">
               {links.map((link, index) => (
@@ -178,7 +178,7 @@ export default function Navbar() {
                   initial={{ opacity: 0, x: -16 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.04 }}
-                  className="border-b border-gold/5 py-3 text-sm text-ivory/80"
+                  className="border-b border-border-subtle py-3 text-sm text-foreground/80"
                 >
                   <span className="mr-3 font-mono text-[10px] text-gold">
                     0{index + 1}
@@ -194,7 +194,7 @@ export default function Navbar() {
                     download
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-2 rounded-full bg-gold px-5 py-3 text-xs font-bold text-[#0a0e14]"
+                    className="flex items-center gap-2 rounded-full bg-gold px-5 py-3 text-xs font-bold text-obsidian"
                   >
                     <FaDownload />
                     {t(L("Unduh CV", "Download CV"))}
